@@ -11,12 +11,11 @@
 <section class="section-block stack" aria-labelledby="home-sections">
   <h2 id="home-sections" class="section-title">Ranna an tsuímh / Site sections</h2>
   <div class="grid cols-3">
-    <article class="card"><h3><a href="{{ "/about/" | relURL }}">Maidir liom / About</a></h3><p>An cúlra pearsanta, an obair, agus an cur chuige praiticiúil atá ag Éimí.</p></article>
-    <article class="card"><h3><a href="{{ "/writing/" | relURL }}">Scríbhneoireacht / Writing</a></h3><p>Ailt ghlana faoi Ghaeilge, teicneolaíocht, agus meas ar dhaoine ar líne.</p></article>
-    <article class="card"><h3><a href="{{ "/projects/" | relURL }}">Tionscadail / Projects</a></h3><p>Obair foinse oscailte agus tionscadail bheaga úsáideacha le croí inrochtana.</p></article>
-    <article class="card"><h3><a href="{{ "/gallery/" | relURL }}">Gailearaí / Gallery</a></h3><p>Íomhánna socra agus breathnuithe beaga ón saol cruthaitheach laethúil.</p></article>
-    <article class="card"><h3><a href="{{ "/links/" | relURL }}">Naisc & Teagmháil / Links & Contact</a></h3><p>Na naisc oifigiúla chun Éimí a leanúint nó teagmháil a dhéanamh.</p></article>
-    <article class="card"><h3><a href="{{ "/now/" | relURL }}">Anois / Now</a></h3><p>Cad atá idir lámha faoi láthair: staidéar, scríbhneoireacht, agus tógáil bheag chliste.</p></article>
+    {{ range .Site.Menus.main }}
+      {{ if and .Page (not .Page.IsHome) }}
+        {{ partial "components/card.html" .Page }}
+      {{ end }}
+    {{ end }}
   </div>
 </section>
 
