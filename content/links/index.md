@@ -1,20 +1,16 @@
 +++
 title = 'Naisc & Teagmháil / Links & Contact'
-summary = 'Conas teagmháil a dhéanamh le Éimí agus cá bhfuil sí ar líne.'
+summary = 'Conas teagmháil a dhéanamh le Éimí agus cá bhfuil sí ar na meáin shóisialta.'
 +++
 
 ## Gaeilge
 
-Is féidir teacht ar Éimí anseo:
+Seo na háiteanna is fearr chun teacht ar Éimí ar na meáin shóisialta:
 
-- [eim.ie](https://eim.ie/)
-- [eimi.dev](https://eimi.dev/)
-- [Bluesky](https://bsky.app/profile/eim.ie)
-- [GitHub](https://www.github.com/eimi-codes)
-- [Mastodon](https://mastodon.ie/@eimi)
-- [Tumblr](https://eimiandcoffee.tumblr.com/)
-- [Leathanach Gaeilge ar Vicipéid](https://ga.wikipedia.org/wiki/User:%C3%89im%C3%ADvici)
+1. [Bluesky](https://bsky.app/profile/eim.ie)
+2. [GitHub](https://www.github.com/eimi-codes)
+3. [Mastodon](https://mastodon.ie/@eimi)
 
 ## English
 
-You can find Éimí at the links above.
+You can find Éimí on social media at the links above.

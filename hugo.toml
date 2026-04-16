@@ -29,9 +29,6 @@ enableRobotsTXT = true
   [[params.social]]
     name = 'Mastodon'
     url = 'https://mastodon.ie/@eimi'
-  [[params.social]]
-    name = 'Tumblr'
-    url = 'https://eimiandcoffee.tumblr.com/'
 
 [menu]
   [[menu.main]]
