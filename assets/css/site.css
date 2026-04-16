@@ -74,6 +74,7 @@ a {
 a:hover,
 a:focus-visible {
   background: var(--bg-highlight-200);
+  color: var(--text-ink);
 }
 
 :focus-visible {
