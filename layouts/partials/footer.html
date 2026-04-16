@@ -1,0 +1,8 @@
+<footer class="site-footer" role="contentinfo">
+  <p>Déanta le Hugo agus cúram. Built with Hugo and care.</p>
+  <ul>
+    {{ range .Site.Params.social }}
+      <li><a href="{{ .url }}" rel="me">{{ .name }}</a></li>
+    {{ end }}
+  </ul>
+</footer>

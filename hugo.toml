@@ -1,0 +1,61 @@
+baseURL = 'https://eim.ie/'
+languageCode = 'ga-IE'
+defaultContentLanguage = 'ga'
+defaultContentLanguageInSubdir = false
+title = 'Éimí'
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+
+[params]
+  description = 'Suíomh pearsanta Éimí: scríbhneoireacht, tionscadail, grianghrafadóireacht, agus naisc.'
+
+  [[params.social]]
+    name = 'Bluesky'
+    url = 'https://bsky.app/profile/eim.ie'
+  [[params.social]]
+    name = 'GitHub'
+    url = 'https://www.github.com/eimi-codes'
+  [[params.social]]
+    name = 'Mastodon'
+    url = 'https://mastodon.ie/@eimi'
+
+[menu]
+  [[menu.main]]
+    name = 'Baile / Home'
+    pageRef = '/'
+    weight = 10
+  [[menu.main]]
+    name = 'Maidir liom / About'
+    pageRef = '/about'
+    weight = 20
+  [[menu.main]]
+    name = 'Scríbhneoireacht / Writing'
+    pageRef = '/writing'
+    weight = 30
+  [[menu.main]]
+    name = 'Tionscadail / Projects'
+    pageRef = '/projects'
+    weight = 40
+  [[menu.main]]
+    name = 'Gailearaí / Gallery'
+    pageRef = '/gallery'
+    weight = 50
+  [[menu.main]]
+    name = 'Naisc & Teagmháil / Links & Contact'
+    pageRef = '/links'
+    weight = 60
+  [[menu.main]]
+    name = 'Anois / Now'
+    pageRef = '/now'
+    weight = 70
