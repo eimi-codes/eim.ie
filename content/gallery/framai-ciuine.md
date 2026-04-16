@@ -6,7 +6,7 @@ summary = 'Sampla gailearaí le tuairisc inrochtana.'
 
 ## Gaeilge
 
-Áit shealbhánach don chéad bhailiúchán íomhánna. Cuir alt-text maith le gach íomhá, gan fail.
+Áit shealbhánach don chéad bhailiúchán íomhánna. Cuir alt-text maith le gach íomhá, gan teip.
 
 ## English
 
