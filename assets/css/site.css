@@ -230,9 +230,9 @@ h1 {
 .single-page::before {
   top: 0.6rem;
   left: 0.6rem;
-  border-top: 1.5px solid var(--border-soft);
-  border-left: 1.5px solid var(--border-soft);
-  border-top-left-radius: 0.7rem;
+  border-top: 1px solid var(--border-soft);
+  border-left: 1px solid var(--border-soft);
+  border-top-left-radius: 0.4rem;
 }
 
 .hero::after,
