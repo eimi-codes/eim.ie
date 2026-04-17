@@ -19,7 +19,7 @@ Suíomh pearsanta Éimí ar Hugo, deartha leis an mbrandáil 2026 **Minimalist T
 - `content/links` – links/contact page
 - `content/now` – now page
 - `layouts/_default` – reusable list/single/base templates
-- `layouts/partials/components` – starter component library (`card`, `knot`)
+- `layouts/partials/components` – starter component library (`card`)
 - `assets/css/site.css` – design token system + global styles
 
 ## Content model
