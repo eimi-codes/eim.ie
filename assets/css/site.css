@@ -240,9 +240,9 @@ h1 {
 .single-page::after {
   bottom: 0.6rem;
   right: 0.6rem;
-  border-bottom: 1.5px solid var(--border-soft);
-  border-right: 1.5px solid var(--border-soft);
-  border-bottom-right-radius: 0.7rem;
+  border-bottom: 1px solid var(--border-soft);
+  border-right: 1px solid var(--border-soft);
+  border-bottom-right-radius: 0.4rem;
 }
 
 .grid {
