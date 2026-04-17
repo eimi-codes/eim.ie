@@ -28,13 +28,15 @@
   --border-soft: color-mix(in srgb, var(--border-brand-400) 38%, transparent);
   --bg-highlight-200: #cac6f9;
   --focus-ring: #7a72bd;
+  /* Elevation scale: container, card, and interactive-card hover states. */
   --shadow-soft: 0 8px 26px -18px rgb(28 58 46 / 38%);
   --shadow-card: 0 6px 22px -18px rgb(28 58 46 / 45%);
   --shadow-card-hover: 0 12px 28px -22px rgb(28 58 46 / 62%);
+  --ornament-corner-size: 1.6rem;
   --divider-margin-top-factor: -0.2;
   --divider-margin-bottom-factor: -0.1;
   --ornament-dot-size: 0.08rem;
-  --ornament-dot-falloff: 0.1rem;
+  --ornament-dot-gradient-radius: 0.1rem;
   --radius-lg: 1rem;
   --space-1: 0.5rem;
   --space-2: 1rem;
@@ -217,8 +219,8 @@ h1 {
 .single-page::after {
   content: '';
   position: absolute;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: var(--ornament-corner-size);
+  height: var(--ornament-corner-size);
   pointer-events: none;
   opacity: 0.7;
 }
@@ -294,6 +296,7 @@ pre {
 .interlace-divider {
   display: grid;
   place-items: center;
+  /* Small negative offsets tuck the divider into surrounding section rhythm. */
   margin:
     calc(var(--space-2) * var(--divider-margin-top-factor))
     0
@@ -307,7 +310,7 @@ pre {
   border-radius: 999px;
   background:
     linear-gradient(var(--border-soft), var(--border-soft)) center / 100% 1px no-repeat,
-    radial-gradient(circle, var(--border-brand-400) var(--ornament-dot-size), transparent var(--ornament-dot-falloff)) center / 1.2rem 100% repeat-x;
+    radial-gradient(circle, var(--border-brand-400) var(--ornament-dot-size), transparent var(--ornament-dot-gradient-radius)) center / 1.2rem 100% repeat-x;
   opacity: 0.72;
 }
 
