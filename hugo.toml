@@ -44,18 +44,6 @@ enableRobotsTXT = true
     pageRef = '/writing'
     weight = 30
   [[menu.main]]
-    name = 'Tionscadail / Projects'
-    pageRef = '/projects'
-    weight = 40
-  [[menu.main]]
     name = 'Gailearaí / Gallery'
     pageRef = '/gallery'
-    weight = 50
-  [[menu.main]]
-    name = 'Naisc & Teagmháil / Links & Contact'
-    pageRef = '/links'
-    weight = 60
-  [[menu.main]]
-    name = 'Anois / Now'
-    pageRef = '/now'
-    weight = 70
+    weight = 40

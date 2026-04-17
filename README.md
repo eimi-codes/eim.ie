@@ -14,19 +14,16 @@ Suíomh pearsanta Éimí ar Hugo, deartha leis an mbrandáil 2026 **Minimalist T
 - `content/_index.md` – homepage metadata
 - `content/about` – about page
 - `content/writing` – posts list + entries
-- `content/projects` – projects list + entries
 - `content/gallery` – gallery list + entries
-- `content/links` – links/contact page
-- `content/now` – now page
 - `layouts/_default` – reusable list/single/base templates
 - `layouts/partials/components` – starter component library (`card`)
+- `layouts/partials/footer.html` – footer social links with icon buttons
 - `assets/css/site.css` – design token system + global styles
 
 ## Content model
 
 - **Pages**: `title`, `summary`
 - **Posts**: `title`, `date`, `summary`, `tags`, `categories`
-- **Projects**: `title`, `date`, `summary`, `stack`, `repo`, `status`
 
 ## Development
 
