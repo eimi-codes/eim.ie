@@ -137,7 +137,7 @@ a:focus-visible {
   position: absolute;
   inset: 0.45rem;
   border: 1px solid var(--border-soft);
-  border-radius: calc(var(--radius-lg) - 0.3rem);
+  border-radius: calc(var(--radius-lg) - 0.45rem);
   pointer-events: none;
 }
 
