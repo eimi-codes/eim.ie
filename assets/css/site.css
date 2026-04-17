@@ -31,6 +31,10 @@
   --shadow-soft: 0 8px 26px -18px rgb(28 58 46 / 38%);
   --shadow-card: 0 6px 22px -18px rgb(28 58 46 / 45%);
   --shadow-card-hover: 0 12px 28px -22px rgb(28 58 46 / 62%);
+  --divider-margin-top-factor: -0.2;
+  --divider-margin-bottom-factor: -0.1;
+  --ornament-dot-size: 0.08rem;
+  --ornament-dot-falloff: 0.1rem;
   --radius-lg: 1rem;
   --space-1: 0.5rem;
   --space-2: 1rem;
@@ -290,7 +294,10 @@ pre {
 .interlace-divider {
   display: grid;
   place-items: center;
-  margin: calc(var(--space-2) * -0.2) 0 calc(var(--space-2) * -0.1);
+  margin:
+    calc(var(--space-2) * var(--divider-margin-top-factor))
+    0
+    calc(var(--space-2) * var(--divider-margin-bottom-factor));
 }
 
 .interlace-divider::before {
@@ -300,7 +307,7 @@ pre {
   border-radius: 999px;
   background:
     linear-gradient(var(--border-soft), var(--border-soft)) center / 100% 1px no-repeat,
-    radial-gradient(circle, var(--border-brand-400) 0.08rem, transparent 0.1rem) center / 1.2rem 100% repeat-x;
+    radial-gradient(circle, var(--border-brand-400) var(--ornament-dot-size), transparent var(--ornament-dot-falloff)) center / 1.2rem 100% repeat-x;
   opacity: 0.72;
 }
 
