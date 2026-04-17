@@ -33,8 +33,8 @@
   --shadow-card: 0 6px 22px -18px rgb(28 58 46 / 45%);
   --shadow-card-hover: 0 12px 28px -22px rgb(28 58 46 / 62%);
   --ornament-corner-size: 1.6rem;
-  --divider-margin-top-factor: -0.2;
-  --divider-margin-bottom-factor: -0.1;
+  --divider-negative-margin-top-multiplier: -0.2;
+  --divider-negative-margin-bottom-multiplier: -0.1;
   --ornament-dot-size: 0.08rem;
   --ornament-dot-gradient-radius: 0.1rem;
   --radius-lg: 1rem;
@@ -298,9 +298,9 @@ pre {
   place-items: center;
   /* Small negative offsets tuck the divider into surrounding section rhythm. */
   margin:
-    calc(var(--space-2) * var(--divider-margin-top-factor))
+    calc(var(--space-2) * var(--divider-negative-margin-top-multiplier))
     0
-    calc(var(--space-2) * var(--divider-margin-bottom-factor));
+    calc(var(--space-2) * var(--divider-negative-margin-bottom-multiplier));
 }
 
 .interlace-divider::before {
