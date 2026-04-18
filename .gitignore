@@ -2,9 +2,33 @@
 /public/
 /resources/_gen/
 
+# Node.js / npm
+/node_modules/
+package-lock.json
+npm-debug.log*
+.npm
+
 # OS/editor noise
 .DS_Store
 *.swp
 *.swo
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
 
+# Hugo metadata
 .hugo_build.lock
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+
+# Testing
+coverage/
+.nyc_output/

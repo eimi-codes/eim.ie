@@ -1,0 +1,41 @@
+{
+  "name": "eim.ie",
+  "version": "2026.1.0",
+  "description": "Suíomh pearsanta Éimí ar Hugo - Personal website built with Hugo, styled with minimalist design principles",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "hugo server",
+    "dev:draft": "hugo server -D",
+    "dev:verbose": "hugo server -v",
+    "build": "hugo --minify",
+    "preview": "hugo server --buildDrafts --buildFuture",
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check . --list-different",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "hugo",
+    "static-site",
+    "accessibility",
+    "gaeilge",
+    "personal-website",
+    "neurodiversity",
+    "disability-rights"
+  ],
+  "author": "Éimí Mhic an Ridire <eimi@eim.ie>",
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.2.5"
+  },
+  "lint-staged": {
+    "*.{md,markdown,toml,yml,yaml,json}": "prettier --write",
+    "*.html": "prettier --write"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

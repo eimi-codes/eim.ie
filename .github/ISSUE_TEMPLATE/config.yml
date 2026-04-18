@@ -1,0 +1,19 @@
+# GitHub Issue Templates Config
+blank_issues_enabled: false
+
+contact_links:
+  - name: 💬 Discussions
+    url: https://github.com/eimi-codes/eim.ie/discussions
+    about: Ask questions, share ideas, and discuss with the community
+
+  - name: 🐘 Mastodon
+    url: https://mastodon.ie/@eimi
+    about: Connect and chat on Mastodon
+
+  - name: 🦋 Bluesky
+    url: https://bsky.app/profile/eim.ie
+    about: Follow on Bluesky for updates
+
+  - name: 📧 Email
+    url: mailto:eimi@eim.ie
+    about: Contact directly for private matters

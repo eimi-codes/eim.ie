@@ -1,0 +1,23 @@
+# Code owners for automatic PR reviews
+
+# Overall project
+* @eimi-codes
+
+# Documentation
+/README.md @eimi-codes
+/.github/ @eimi-codes
+/CONTRIBUTING.md @eimi-codes
+
+# Site content
+/content/ @eimi-codes
+/archetypes/ @eimi-codes
+
+# Site design & structure
+/layouts/ @eimi-codes
+/assets/ @eimi-codes
+/static/ @eimi-codes
+
+# Configuration
+/hugo.toml @eimi-codes
+/.gitignore @eimi-codes
+/package.json @eimi-codes

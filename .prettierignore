@@ -1,0 +1,16 @@
+# Hugo build output
+public/
+resources/
+
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+.gitignore
+
+# Hugo metadata
+.hugo_build.lock
+
+# Content that should not be formatted
+content/**/*.md
