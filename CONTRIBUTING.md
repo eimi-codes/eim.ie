@@ -185,6 +185,7 @@ style: format Markdown and TOML files
 ### PR Review
 
 All PRs are reviewed for:
+
 - ✅ Code quality and style
 - ✅ Functionality and testing
 - ✅ Accessibility (WCAG 2.1 AA)
@@ -200,6 +201,7 @@ All PRs are reviewed for:
 1. **Location**: `content/writing/article-name.md`
 
 2. **Front Matter Template**:
+
    ```toml
    +++
    title = "Article Title"

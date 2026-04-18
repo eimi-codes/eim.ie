@@ -1,8 +1,14 @@
 {{ define "main" }}
 <section class="hero">
   <h1>{{ .Title }}</h1>
-  <p><strong>Fáilte romhat, a chroí.</strong> Is mise Éimí Mhic an Ridire. Scríobhaim faoi theanga, faoi theicneolaíocht, agus faoi inrochtaineacht dhigiteach a oibríonn i saol fíor na ndaoine.</p>
-  <p><strong>Welcome in.</strong> I’m Éimí Mhic an Ridire. I write about language, technology, and practical accessibility that works for real people.</p>
+  <p>
+    <strong>Fáilte romhat, a chroí.</strong> Is mise Éimí Mhic an Ridire. Scríobhaim faoi theanga,
+    faoi theicneolaíocht, agus faoi inrochtaineacht dhigiteach a oibríonn i saol fíor na ndaoine.
+  </p>
+  <p>
+    <strong>Welcome in.</strong> I’m Éimí Mhic an Ridire. I write about language, technology, and
+    practical accessibility that works for real people.
+  </p>
 </section>
 
 <div class="interlace-divider" aria-hidden="true"></div>
@@ -10,22 +16,14 @@
 <section class="section-block stack" aria-labelledby="home-sections">
   <h2 id="home-sections" class="section-title">Ranna an tsuímh / Site sections</h2>
   <div class="grid cols-3">
-    {{ range .Site.Menus.main }}
-      {{ if and .Page (not .Page.IsHome) }}
-        {{ partial "components/card.html" .Page }}
-      {{ end }}
-    {{ end }}
+    {{ range .Site.Menus.main }} {{ if and .Page (not .Page.IsHome) }} {{ partial
+    "components/card.html" .Page }} {{ end }} {{ end }}
   </div>
 </section>
 
 {{ with first 3 (where .Site.RegularPages "Section" "writing") }}
 <section class="section-block stack" aria-labelledby="latest-writing">
   <h2 id="latest-writing" class="section-title">An scríbhneoireacht is déanaí / Latest writing</h2>
-  <div class="grid cols-3">
-    {{ range . }}
-      {{ partial "components/card.html" . }}
-    {{ end }}
-  </div>
+  <div class="grid cols-3">{{ range . }} {{ partial "components/card.html" . }} {{ end }}</div>
 </section>
-{{ end }}
-{{ end }}
+{{ end }} {{ end }}

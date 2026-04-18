@@ -12,8 +12,7 @@
     "preview": "hugo server --buildDrafts --buildFuture",
     "lint": "prettier --check .",
     "format": "prettier --write .",
-    "format:check": "prettier --check . --list-different",
-    "prepare": "husky install"
+    "format:check": "prettier --check . --list-different"
   },
   "keywords": [
     "hugo",

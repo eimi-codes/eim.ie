@@ -29,7 +29,8 @@
 
 **Éimí Mhic an Ridire** is an Irish woman living in North-East Scotland with expertise in **digital accessibility, neurodiversity, and disability rights**. This is her personal website featuring writing, photography, and projects centered on building tech that works for everyone.
 
-### Core Values  
+### Core Values
+
 🔗 **Bridges, not walls** – Contributing to open-source projects like Wikimedia Commons and OpenStreetMap  
 ♿ **Accessibility-first design** – Real-world insights as a wheelchair user and neurodivergent technologist  
 🌍 **Bilingual content** – Irish language promotion alongside English  
@@ -39,14 +40,14 @@
 
 ## 🗂️ Site Sections
 
-| Section | Purpose | Status |
-|---------|---------|--------|
-| 🏠 **Home** (`/`) | Landing page with site introduction | ✅ Active |
-| 📝 **Writing** (`/writing/`) | Blog posts on work, language, and digital life | ✅ 4 articles |
-| 🖼️ **Gallery** (`/gallery/`) | Photography and visual projects | ✅ In progress |
-| 👤 **About** (`/about/`) | Bio, projects, and now page | ✅ Active |
-| 🔗 **Links** (`/links/`) | Curated link directory | ✅ Static |
-| 📌 **Projects** (`/projects/`) | Ongoing projects and updates | 🔄 Planned |
+| Section                        | Purpose                                        | Status         |
+| ------------------------------ | ---------------------------------------------- | -------------- |
+| 🏠 **Home** (`/`)              | Landing page with site introduction            | ✅ Active      |
+| 📝 **Writing** (`/writing/`)   | Blog posts on work, language, and digital life | ✅ 4 articles  |
+| 🖼️ **Gallery** (`/gallery/`)   | Photography and visual projects                | ✅ In progress |
+| 👤 **About** (`/about/`)       | Bio, projects, and now page                    | ✅ Active      |
+| 🔗 **Links** (`/links/`)       | Curated link directory                         | ✅ Static      |
+| 📌 **Projects** (`/projects/`) | Ongoing projects and updates                   | 🔄 Planned     |
 
 ---
 
@@ -84,16 +85,16 @@ eim.ie/
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology | Notes |
-|-------|-----------|-------|
-| **Generator** | [Hugo](https://gohugo.io/) | Static site generator |
-| **Language** | [TOML](https://toml.io/) / Markdown | Configuration & content |
-| **Styling** | CSS + Custom Properties | Design tokens system |
-| **Typography** | Local Web Fonts | Accessibility-focused |
-| **Fonts** | Atkinson Hyperlegible, Fraunces, JetBrains Mono | High legibility & variable support |
-| **Hosting** | GitHub Pages | Free, fast, integrated |
-| **CI/CD** | GitHub Actions | Automated deployment |
-| **Markup** | Goldmark | Secure Markdown renderer (unsafe = false) |
+| Layer          | Technology                                      | Notes                                     |
+| -------------- | ----------------------------------------------- | ----------------------------------------- |
+| **Generator**  | [Hugo](https://gohugo.io/)                      | Static site generator                     |
+| **Language**   | [TOML](https://toml.io/) / Markdown             | Configuration & content                   |
+| **Styling**    | CSS + Custom Properties                         | Design tokens system                      |
+| **Typography** | Local Web Fonts                                 | Accessibility-focused                     |
+| **Fonts**      | Atkinson Hyperlegible, Fraunces, JetBrains Mono | High legibility & variable support        |
+| **Hosting**    | GitHub Pages                                    | Free, fast, integrated                    |
+| **CI/CD**      | GitHub Actions                                  | Automated deployment                      |
+| **Markup**     | Goldmark                                        | Secure Markdown renderer (unsafe = false) |
 
 ---
 
@@ -108,6 +109,7 @@ hugo server
 The site will be available at `http://localhost:1313`
 
 ### Development Commands
+
 ```bash
 # Watch for changes
 hugo server --watch
@@ -134,6 +136,7 @@ This generates the `public/` folder with minified assets.
 ### GitHub Pages Deployment
 
 The site is automatically deployed to GitHub Pages via GitHub Actions (`/.github/workflows/hugo.yml`):
+
 - Triggered on push to `main` branch
 - Builds with Hugo
 - Deploys to `gh-pages` branch
@@ -144,6 +147,7 @@ The site is automatically deployed to GitHub Pages via GitHub Actions (`/.github
 ## 📋 Content Model
 
 ### Pages (Static Content)
+
 ```toml
 +++
 title = 'Page Title'
@@ -153,6 +157,7 @@ aliases = ['/alternative-url/']
 ```
 
 ### Posts (Blog Articles)
+
 ```toml
 +++
 title = 'Article Title'
@@ -164,6 +169,7 @@ categories = ['category']
 ```
 
 ### Taxonomies
+
 - `tags` – Topic labels (accessibility, neurodivergent, etc.)
 - `categories` – Content grouping
 
@@ -172,25 +178,29 @@ categories = ['category']
 ## 🎨 Design System
 
 ### Design Tokens
+
 The site uses **CSS custom properties (variables)** defined in `assets/css/site.css`:
+
 - Color tokens for semantic color values
 - Typography tokens for consistent font usage
 - Spacing/sizing tokens for layout
 
 ### Typography Stack
-| Font | Usage | Features |
-|------|-------|----------|
+
+| Font                      | Usage     | Features                                            |
+| ------------------------- | --------- | --------------------------------------------------- |
 | **Atkinson Hyperlegible** | Body text | High x-height, clear distinction between characters |
-| **Fraunces** | Headings | Variable font, optical sizing |
-| **JetBrains Mono** | Code | Monospace, excellent readability |
+| **Fraunces**              | Headings  | Variable font, optical sizing                       |
+| **JetBrains Mono**        | Code      | Monospace, excellent readability                    |
 
 ### Accessibility Features
+
 ✅ WCAG 2.1 AA compliant  
 ✅ Semantic HTML  
 ✅ High contrast ratios  
 ✅ Keyboard navigation  
 ✅ Screen reader optimized  
-✅ No auto-playing media  
+✅ No auto-playing media
 
 ---
 

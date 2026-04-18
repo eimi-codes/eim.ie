@@ -51,9 +51,12 @@
   --space-3: 1.5rem;
   --space-4: 2rem;
   --space-5: 3rem;
-  --font-body: 'Atkinson Hyperlegible Local', 'Atkinson Hyperlegible', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body:
+    'Atkinson Hyperlegible Local', 'Atkinson Hyperlegible', 'Inter', system-ui, -apple-system,
+    sans-serif;
   --font-heading: 'Fraunces Local', 'Fraunces', Georgia, serif;
-  --font-code: 'JetBrains Mono Local', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-code:
+    'JetBrains Mono Local', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -91,12 +94,17 @@ body {
   line-height: 1.65;
   color: var(--text-ink);
   background: var(--bg-paper);
-  background:
-    radial-gradient(circle at 12% 8%, rgb(122 114 189 / 0.08) 0, transparent 40%);
-  background:
-    radial-gradient(circle at 12% 8%, color-mix(in srgb, var(--bg-accent-100) 65%, transparent) 0, transparent 40%);
-  background:
-    linear-gradient(180deg, var(--bg-paper) 0%, color-mix(in srgb, var(--bg-accent-200) 42%, var(--bg-paper)) 100%);
+  background: radial-gradient(circle at 12% 8%, rgb(122 114 189 / 0.08) 0, transparent 40%);
+  background: radial-gradient(
+    circle at 12% 8%,
+    color-mix(in srgb, var(--bg-accent-100) 65%, transparent) 0,
+    transparent 40%
+  );
+  background: linear-gradient(
+    180deg,
+    var(--bg-paper) 0%,
+    color-mix(in srgb, var(--bg-accent-200) 42%, var(--bg-paper)) 100%
+  );
 }
 
 a {
@@ -304,9 +312,15 @@ h1 {
   border-color: var(--border-soft);
   background: var(--bg-paper);
   background: linear-gradient(180deg, var(--bg-paper) 0%, #f6faf7 100%);
-  background: linear-gradient(180deg, var(--bg-paper) 0%, color-mix(in srgb, var(--bg-accent-100) 32%, var(--bg-paper)) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--bg-paper) 0%,
+    color-mix(in srgb, var(--bg-accent-100) 32%, var(--bg-paper)) 100%
+  );
   box-shadow: var(--shadow-card);
-  transition: transform 120ms ease-out, box-shadow 120ms ease-out;
+  transition:
+    transform 120ms ease-out,
+    box-shadow 120ms ease-out;
 }
 
 .card:hover,
@@ -412,7 +426,12 @@ pre {
   border-radius: 999px;
   background:
     linear-gradient(var(--border-soft), var(--border-soft)) center / 100% 1px no-repeat,
-    radial-gradient(circle, var(--border-brand-400) var(--ornament-dot-size), transparent var(--ornament-dot-gradient-radius)) center / 1.2rem 100% repeat-x;
+    radial-gradient(
+        circle,
+        var(--border-brand-400) var(--ornament-dot-size),
+        transparent var(--ornament-dot-gradient-radius)
+      )
+      center / 1.2rem 100% repeat-x;
   opacity: 0.72;
 }
 
@@ -420,7 +439,11 @@ pre {
   position: relative;
   background: var(--bg-paper);
   background: linear-gradient(180deg, #f8fcf9 0%, var(--bg-paper) 100%);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--bg-accent-100) 24%, var(--bg-paper)) 0%, var(--bg-paper) 100%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--bg-accent-100) 24%, var(--bg-paper)) 0%,
+    var(--bg-paper) 100%
+  );
 }
 
 .site-footer {

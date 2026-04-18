@@ -24,6 +24,7 @@ This project follows security best practices:
 ## Dependencies
 
 Security vulnerabilities in dependencies are tracked through:
+
 - **Dependabot** alerts
 - **npm audit** checks in CI/CD pipeline
 - Regular updates to Hugo, Node.js packages

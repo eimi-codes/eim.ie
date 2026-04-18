@@ -7,12 +7,14 @@ This document outlines the development infrastructure, automation, and contribut
 ## 📦 What's Included
 
 ### Node.js & Package Management
+
 - **package.json** – Dependencies and scripts
 - **Prettier** – Automatic code formatting
 - **Husky** – Git hooks for pre-commit checks
 - **lint-staged** – Run formatters on staged files
 
 ### GitHub Workflows (`.github/workflows/`)
+
 1. **hugo.yml** – Main build & deploy pipeline
    - Lint & format check
    - Hugo build
@@ -29,12 +31,14 @@ This document outlines the development infrastructure, automation, and contribut
    - Creates GitHub releases with changelogs
 
 ### Issue & PR Templates (`.github/ISSUE_TEMPLATE/`)
+
 - **bug_report.md** – Report bugs with screenshots
 - **feature_request.md** – Suggest new features
 - **content_request.md** – Request new content
 - **config.yml** – Configure issue templates UI
 
 ### Configuration Files
+
 - **.prettierrc** – Code formatting rules
 - **.prettierignore** – Files to skip formatting
 - **.editorconfig** – Cross-editor formatting
@@ -42,6 +46,7 @@ This document outlines the development infrastructure, automation, and contribut
 - **CODEOWNERS** – Code ownership assignments
 
 ### Meta Files
+
 - **CONTRIBUTING.md** – Contribution guidelines
 - **SECURITY.md** – Security policy & vulnerability reporting
 
@@ -50,6 +55,7 @@ This document outlines the development infrastructure, automation, and contribut
 ## 🚀 Quick Start for Contributors
 
 ### First Time Setup
+
 ```bash
 # Clone the repository
 git clone https://github.com/eimi-codes/eim.ie.git
@@ -63,6 +69,7 @@ npm run dev
 ```
 
 ### Making Changes
+
 ```bash
 # Create a feature branch
 git checkout -b feature/your-feature-name
@@ -106,18 +113,21 @@ Examples:
 ## 🔄 GitHub Workflows
 
 ### Automatic on Every Push
+
 - ✅ Format checking with Prettier
 - ✅ Hugo build verification
 - ✅ Accessibility scanning (when site is live)
 - ✅ Deployment to GitHub Pages (on main only)
 
 ### Automatic on PR Creation
+
 - ✅ Format checks must pass
 - ✅ Build must succeed
 - ✅ Auto-labeling by file changes
 - ✅ Dependabot updates
 
 ### Manual Triggers
+
 - 🔧 Release creation
 - 🔧 Content sync
 
@@ -126,11 +136,13 @@ Examples:
 ## 🤝 Contribution Workflow
 
 1. **Fork & Clone**
+
    ```bash
    git clone https://github.com/YOUR-USERNAME/eim.ie.git
    ```
 
 2. **Create Feature Branch**
+
    ```bash
    git checkout -b feature/my-feature
    ```
@@ -141,6 +153,7 @@ Examples:
    - Follow conventional commit format
 
 4. **Format & Lint**
+
    ```bash
    npm run format
    npm run lint
@@ -173,17 +186,20 @@ See [SECURITY.md](.github/SECURITY.md) for details.
 ## 📋 Issue Types
 
 ### Bug Report
+
 - Describe the bug
 - Steps to reproduce
 - Expected vs actual behavior
 - Screenshots/browser info
 
 ### Feature Request
+
 - What problem does it solve?
 - How should it work?
 - Accessibility considerations
 
 ### Content Request
+
 - What type of content?
 - Topic/outline
 - Tags and language (GA/EN)
@@ -193,15 +209,18 @@ See [SECURITY.md](.github/SECURITY.md) for details.
 ## 🎨 Code Style
 
 ### Formatting
+
 - **Prettier** auto-formats on commit
 - Run `npm run format` anytime
 - Supports Markdown, TOML, YAML, JSON, HTML, CSS
 
 ### Git Hooks (Husky)
+
 - **pre-commit**: Prettier formatting check
 - **commit-msg**: Validates commit message format
 
 ### Editor Config
+
 - **EditorConfig** (`.editorconfig`) maintains consistency across editors
 - VS Code: Install [EditorConfig extension](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 
@@ -209,20 +228,21 @@ See [SECURITY.md](.github/SECURITY.md) for details.
 
 ## 📊 Scripts
 
-| Script | Purpose |
-|--------|---------|
-| `npm run dev` | Start dev server |
+| Script              | Purpose             |
+| ------------------- | ------------------- |
+| `npm run dev`       | Start dev server    |
 | `npm run dev:draft` | Include draft posts |
-| `npm run build` | Production build |
-| `npm run lint` | Check formatting |
-| `npm run format` | Auto-format files |
-| `npm run prepare` | Install Husky hooks |
+| `npm run build`     | Production build    |
+| `npm run lint`      | Check formatting    |
+| `npm run format`    | Auto-format files   |
+| `npm run prepare`   | Install Husky hooks |
 
 ---
 
 ## 🔄 Dependency Management
 
 ### Manual Updates
+
 ```bash
 npm update           # Update packages
 npm outdated         # Check for updates
@@ -230,6 +250,7 @@ npm audit fix        # Fix vulnerabilities
 ```
 
 ### Automated via Dependabot
+
 - Daily npm package checks
 - Monthly GitHub Actions checks
 - Auto-creates PRs for updates
@@ -240,12 +261,14 @@ npm audit fix        # Fix vulnerabilities
 ## 🧪 Testing & Validation
 
 ### Local
+
 - `npm run dev` – Visual testing
 - `npm run lint` – Format validation
 - Browser testing – Chrome, Firefox, Safari, Edge
 - Accessibility testing – Keyboard nav, screen readers
 
 ### CI/CD
+
 - Prettier format checks
 - Hugo build verification
 - Pa11y accessibility checks (when live)
@@ -264,4 +287,3 @@ npm audit fix        # Fix vulnerabilities
 ---
 
 **Questions?** Open an issue or contact [@eimi@mastodon.ie](https://mastodon.ie/@eimi)
-

@@ -7,10 +7,7 @@
 {{ if .RegularPages }}
 <section class="section-block stack" aria-label="Liosta ábhair / Content list">
   <div class="grid cols-2">
-    {{ range .RegularPages.ByDate.Reverse }}
-      {{ partial "components/card.html" . }}
-    {{ end }}
+    {{ range .RegularPages.ByDate.Reverse }} {{ partial "components/card.html" . }} {{ end }}
   </div>
 </section>
-{{ end }}
-{{ end }}
+{{ end }} {{ end }}

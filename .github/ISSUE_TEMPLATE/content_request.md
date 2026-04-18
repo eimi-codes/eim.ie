@@ -12,7 +12,7 @@ assignees: 'eimi-codes'
 - [ ] Gallery item / Photography
 - [ ] Project showcase
 - [ ] Link collection
-- [ ] Other: _____
+- [ ] Other: **\_**
 
 ---
 
@@ -32,8 +32,8 @@ If applicable, provide an outline or structure for the content.
 
 Suggested tags and categories for this content:
 
-- Tags: 
-- Category: 
+- Tags:
+- Category:
 
 ---
 

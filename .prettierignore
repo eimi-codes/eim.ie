@@ -12,5 +12,12 @@ node_modules/
 # Hugo metadata
 .hugo_build.lock
 
+# Hugo templates (Prettier doesn't understand Hugo syntax)
+layouts/
+archetypes/
+
 # Content that should not be formatted
-content/**/*.md
+content/
+
+# Configuration files with comments that aren't JSON-compatible
+.pa11yci.json

@@ -26,9 +26,11 @@ Steps to reproduce the behavior:
 ## 📸 Expected vs Actual
 
 ### Expected Behavior
+
 What should happen instead?
 
 ### Actual Behavior
+
 What is happening instead?
 
 ---
