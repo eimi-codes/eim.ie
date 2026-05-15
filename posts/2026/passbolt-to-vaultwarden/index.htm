@@ -1,0 +1,304 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<title>Passbolt to Vaultwarden :: Eimi Mhic an Ridire</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="A user-focused guide to moving your passwords from Passbolt to Vaultwarden, with safety tips and step-by-step instructions.">
+<meta name="keywords" content="Passbolt, Vaultwarden, Bitwarden, password manager, self-hosted, migration, FOSS">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<!-- Note: if Atkinson Hyperlegible Next is not yet on Google Fonts,
+     self-host from https://www.brailleinstitute.org/freefont/ -->
+<style type="text/css">
+<!--
+/* === Éimí — Minimalist Tech Gael palette (2026) ===
+   Dark Evergreen #1C3A2E | Lavender Indigo #7A72BD
+   Periwinkle #CAC6F9 | Mint Cream #EBF5EE
+*/
+body {
+  background-color:#1C3A2E;
+  color:#EBF5EE;
+  font-family:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',Verdana,Arial,sans-serif;
+  font-size:11px;
+  margin:4px;
+  padding:0;
+}
+a:link    { color:#CAC6F9; text-decoration:none; }
+a:visited { color:#7A72BD; text-decoration:none; }
+a:hover   { color:#EBF5EE; text-decoration:underline; }
+a:active  { color:#EBF5EE; }
+a:focus   { outline:2px solid #CAC6F9; outline-offset:2px; }
+td {
+  font-family:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',Verdana,Arial,sans-serif;
+  font-size:11px;
+}
+.navbox { background-color:#0F1F18; border:1px solid #7A72BD; padding:5px; }
+.navbox a { color:#CAC6F9; font-weight:bold; display:block; padding:2px 0; }
+.navbox a:hover { color:#EBF5EE; }
+.sectionhead {
+  background-color:#142820;
+  color:#CAC6F9;
+  font-weight:bold;
+  padding:3px 6px;
+  border-left:3px solid #7A72BD;
+  font-size:11px;
+}
+.contentbox { background-color:#0F1F18; border:1px solid #2A4438; }
+.contentinner { padding:10px; line-height:1.65; }
+.postdate { color:#7A72BD; font-size:10px; }
+.tag {
+  background-color:#0F1F18;
+  border:1px solid #7A72BD;
+  color:#CAC6F9;
+  font-size:10px;
+  padding:1px 4px;
+}
+h2 { color:#CAC6F9; font-size:14px; border-bottom:1px solid #2A4438; padding-bottom:3px; margin:14px 0 6px 0; }
+h3 { color:#7A72BD; font-size:12px; margin:12px 0 4px 0; }
+p  { margin:0 0 8px 0; }
+b, strong { color:#EBF5EE; }
+em, i { color:#CAC6F9; }
+li { margin-bottom:5px; }
+code {
+  background-color:#0A1810;
+  border:1px solid #2A4438;
+  color:#CAC6F9;
+  font-family:'JetBrains Mono','Courier New',monospace;
+  font-size:10px;
+  padding:1px 4px;
+}
+.callout-red {
+  background-color:#1a0a0a;
+  border-left:3px solid #cc3300;
+  color:#EBF5EE;
+  padding:8px 10px;
+  margin:10px 0;
+}
+.callout-red strong { color:#ff9999; }
+.callout-yellow {
+  background-color:#1a1505;
+  border-left:3px solid #d4a017;
+  color:#EBF5EE;
+  padding:8px 10px;
+  margin:10px 0;
+}
+.callout-yellow strong { color:#ffd966; }
+.tip {
+  background-color:#0F1F18;
+  border:1px solid #7A72BD;
+  color:#CAC6F9;
+  padding:6px 8px;
+  margin:8px 0;
+}
+.tip strong { color:#CAC6F9; }
+-->
+</style>
+</head>
+<body bgcolor="#1C3A2E" text="#EBF5EE" link="#CAC6F9" vlink="#7A72BD" alink="#EBF5EE">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#142820">
+<tr><td><marquee behavior="scroll" direction="left" scrollamount="2" bgcolor="#142820">
+  <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9">&nbsp;&nbsp;&nbsp;&#9733; F&aacute;ilte go dt&iacute; su&iacute;omh &Eacute;im&iacute;! &#9733; Welcome to &Eacute;im&iacute;'s Corner of the Internet! &#9733; F&aacute;ilte! &#9733;&nbsp;&nbsp;&nbsp;</font>
+</marquee></td></tr>
+</table>
+
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr><td>
+  <table width="100%" border="0" cellspacing="0" cellpadding="8" bgcolor="#142820">
+  <tr>
+    <td>
+      <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="5" color="#CAC6F9"><b>&Eacute;im&iacute; Mhic an Ridire</b></font><br>
+      <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#7A72BD">:: bean Gr&eacute;asain :: accessibility advocate :: PowerPC enthusiast ::</font>
+    </td>
+    <td align="right" valign="bottom">
+      <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#7A72BD">[ last updated: May 2026 ]</font>
+    </td>
+  </tr>
+  </table>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td bgcolor="#7A72BD" height="2"></td></tr></table>
+</td></tr>
+</table>
+
+<table width="760" border="0" cellspacing="4" cellpadding="0" align="center">
+<tr valign="top">
+
+  <td width="145">
+    <table width="145" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="navbox">
+      <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9"><b>:: N&Aacute;ISC ::</b></font><br>
+      <a href="../../../index.htm">&#9658; Home Page</a>
+      <a href="../../../gallery.htm">&#9658; Gallery</a>
+      <a href="../../../posts.htm">&#9658; All Posts</a>
+      <a href="../../../attribution.htm">&#9658; Attribution</a>
+    </td></tr>
+    </table><br>
+    <table width="145" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="navbox">
+      <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9"><b>:: SOCIAL ::</b></font><br>
+      <a href="https://bsky.app/profile/eim.ie">&#9658; Bluesky</a>
+      <a href="https://www.github.com/eimi-codes">&#9658; GitHub</a>
+      <a href="https://mastodon.ie/@eimi">&#9658; Mastodon</a>
+      <a href="https://eimiandcoffee.tumblr.com/">&#9658; Tumblr</a>
+      <a href="https://ga.wikipedia.org/wiki/User:%C3%89im%C3%ADvici">&#9658; Vicip&eacute;id</a>
+      <a href="https://en.wikipedia.org/wiki/User:%C3%89im%C3%ADvici">&#9658; Wikipedia</a>
+    </td></tr>
+    </table><br>
+    <table width="145" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="navbox" align="left">
+      <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9"><b>:: TAGS ::</b></font><br><br>
+      <span class="tag">passbolt</span><br><br>
+      <span class="tag">vaultwarden</span><br><br>
+      <span class="tag">password manager</span><br><br>
+      <span class="tag">self-hosted</span><br><br>
+      <span class="tag">FOSS</span><br><br>
+    </td></tr>
+    </table><br>
+
+    <table width="145" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="navbox" align="left">
+      <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9"><b>:: BADGES ::</b></font><br><br>
+      <img src="/img/poweredbymac.gif" alt="Powered by Mac" width="88" height="31" border="0"><br>
+      <img src="/img/macmade2.gif" alt="Made on a Mac" width="88" height="31" border="0"><br>
+      <img src="/img/any_browser.gif" alt="Best viewed with any browser" width="88" height="31" border="0"><br>
+      <img src="/img/html.gif" alt="HTML" width="88" height="31" border="0"><br>
+    </td></tr>
+    </table>
+  </td>
+
+  <td>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="contentbox">
+      <div class="sectionhead">:: Post ::</div>
+      <div class="contentinner">
+        <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="3" color="#CAC6F9"><b>Migrating from Passbolt to Vaultwarden, an unofficial guide</b></font><br>
+        <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" class="postdate">by &Eacute;im&iacute; Mhic an Ridire &nbsp;|&nbsp; February 2026</font>
+        <br><br>
+        <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="2">
+
+        <div class="callout-red" role="note">
+          <strong>Quick safety note:</strong> Exports can include passwords in a readable form depending on the format you choose. Keep the file local, keep it temporary, and delete it after you've confirmed your import worked.
+        </div>
+
+        <div class="callout-yellow" role="note">
+          <strong>If you're not an Overseer or Steward:</strong> your job is usually just to import your <i>personal</i> vault &mdash; the admins will handle shared and team migrations.
+        </div>
+
+        <h2>Overview</h2>
+
+        <p>I've put together this guide to help individual users move their passwords from <b>Passbolt</b> to <b>Vaultwarden</b> (Bitwarden-compatible). This is not an admin or server migration guide, it's about getting your own vault across safely and without tears.</p>
+
+        <h2>Key notes</h2>
+
+        <ul>
+          <li>Both Passbolt and Vaultwarden are self-hosted on our own infrastructure.</li>
+          <li>Vaultwarden is an <a href="https://github.com/dani-garcia/vaultwarden">open-source alternative</a> based on Bitwarden.</li>
+          <li>You can migrate other password systems into Vaultwarden as well, if you so choose.</li>
+          <li>This guide does <i>not</i> help with password recovery or account recovery.</li>
+          <li>Imports don't check for duplicates &mdash; if you import the same file twice, you'll get doubles.</li>
+          <li>Your export file may contain passwords in plain text, depending on the format. Treat it like cash in the wind: keep it temporary, keep it private, delete it after import.</li>
+        </ul>
+
+        <h2>Step 1: Make sure you can log into Vaultwarden</h2>
+
+        <ol>
+          <li>Open the Vaultwarden web vault and log in with your account.</li>
+          <li>If you use the Bitwarden apps (desktop, mobile, browser extension), make sure they're pointed at your Vaultwarden server URL.</li>
+        </ol>
+
+        <h2>Step 2: Export your passwords from Passbolt</h2>
+
+        <p>Passbolt's user guide for export is very straightforward:</p>
+
+        <ol>
+          <li>In Passbolt, select the folder(s) or password(s) you want to move. If you want everything you personally have access to, use the menu beside <i>Folders</i> to export all.</li>
+          <li>Click <b>Export</b> (or <b>Export all</b>).</li>
+          <li>Choose an export format.</li>
+          <li>Enter your Passbolt passphrase when prompted.</li>
+          <li>Download the export file somewhere sensible &mdash; not a shared folder, not a synced cloud drive.</li>
+        </ol>
+
+        <div class="tip">
+          <strong>Tip:</strong> Name it clearly, like <code>passbolt-export-2026-02.csv</code>, so you don't import the wrong file later.
+        </div>
+
+        <h2>Step 3: Import into Vaultwarden</h2>
+
+        <p>In the Vaultwarden web vault:</p>
+
+        <ol>
+          <li>Go to <b>Tools &rarr; Import Data</b>.</li>
+          <li>Choose the file format that matches what you exported.</li>
+          <li>Upload the file and run the import.</li>
+          <li>Delete the export file once you've confirmed your items are in.</li>
+        </ol>
+
+        <h2>Step 4: Check your vault (don't just assume it worked)</h2>
+
+        <p>After import, spot-check:</p>
+
+        <ul>
+          <li>3&ndash;5 logins (URL, username, password)</li>
+          <li>a secure note (if you used them)</li>
+          <li>a couple of folders, tags, or notes to see what carried over</li>
+        </ul>
+
+        <p>If something looks odd, stop and fix before importing again (remember the duplicates warning).</p>
+
+        <h3>Clean-up &mdash; the bit that keeps you safe</h3>
+
+        <ul>
+          <li>Delete the export file.</li>
+          <li>Empty your bin or trash.</li>
+          <li>If you accidentally saved it somewhere synced (iCloud, Nextcloud, Dropbox), remove it from there too.</li>
+        </ul>
+
+        <h2>Organisation sharing</h2>
+
+        <p>This bit is only if your team uses Vaultwarden Organisations or Collections for shared credentials.</p>
+
+        <ul>
+          <li>Use your <i>personal</i> vault for your own stuff, and the <i>Organisation</i> vault for shared and team credentials.</li>
+          <li>Shared credentials are usually organised into <b>Collections</b> inside an Organisation.</li>
+        </ul>
+
+        <h3>If you're asked to import into the Organisation</h3>
+
+        <p>That's typically done via the Organisation / admin side (<b>Admin Console &rarr; Settings &rarr; Import</b>), and collections can be selected during import.</p>
+
+        <p>As a user, you usually just import your personal vault, and the admins handle the shared and team migrations.</p>
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td bgcolor="#2A4438" height="1"></td></tr></table><br>
+
+        <font size="1" color="#CAC6F9">
+          <i>This page only: licensed CC&#8209;BY&#8209;SA&#8209;NC 4.0. The information here is, to the best of my knowledge, true and accurate at the time of publication, and is solely informational. I accept no liability for any loss or damage however arising as a result of use of or reliance on this information.</i>
+        </font>
+
+        </font>
+        <br>
+        <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#7A72BD">
+          &laquo; <a href="../../../posts.htm">Back to all posts</a>
+        </font>
+      </div>
+    </td></tr>
+    </table>
+  </td>
+
+</tr>
+</table>
+
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr><td bgcolor="#7A72BD" height="2"></td></tr>
+<tr><td bgcolor="#142820">
+  <table width="100%" border="0" cellspacing="0" cellpadding="6">
+  <tr><td align="center">
+    <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#7A72BD">
+      &copy; 2026 &Eacute;im&iacute; Mhic an Ridire &nbsp;::&nbsp;
+      <a href="../../../index.htm">eim.ie</a> &nbsp;::&nbsp;
+      crafted with love on a G3 iBook :3 &nbsp;::&nbsp; EUPL Licensed
+    </font>
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+
+</body>
+</html>
