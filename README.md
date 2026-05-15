@@ -9,7 +9,7 @@ A functional retro-era personal website built with early-2000s web standards. Ac
 This is an intentionally retro website—not just a visual theme, but actual older-web technology:
 
 - **HTML 4.01 Transitional** — semantic, lean markup
-- **Embedded CSS** — no external stylesheets or build step
+- **Shared CSS file** — `style.css` is loaded by all pages (still no build step)
 - **Static HTML** — pure content, no frameworks or JavaScript
 - **No external build process** — works as-is
 - **Accessible** — WCAG 2.2 AA, bilingual content, readable by screen readers
@@ -37,8 +37,9 @@ This is an intentionally retro website—not just a visual theme, but actual old
 .
 ├── index.htm           # Home page
 ├── posts.htm           # Archive of blog posts
-├── gallery.htm         # Photo gallery (see TODO below)
+├── gallery.htm         # Photo gallery
 ├── attribution.htm     # Credits and licensing
+├── style.css          # Shared site stylesheet
 ├── README.md          # This file
 ├── .instructions.md   # Copilot project instructions
 │
@@ -188,18 +189,12 @@ All posts tagged and linked from `posts.htm`.
 
 ### Gallery Page (`gallery.htm`)
 
-**Status**: Incomplete — placeholders only
+**Status**: Complete and bilingual
 
-1. Photos need to be added to `uploads/` directory (not in repo yet)
-2. Filenames are documented in the TODO comment
-3. Replace placeholder `<div>` boxes with `<img>` tags
-4. Ensure alt text for all images
-
-Example:
-```html
-<!-- TODO: Replace with actual images -->
-<img src="uploads/img-1378.jpeg" alt="[description]" class="photo-frame">
-```
+1. Gallery images now use self-hosted `/img/` assets
+2. Each photo has descriptive `alt` text
+3. Captions are presented in Gaeilge and English
+4. Keep adding new photos only when the source image and captions are ready
 
 ---
 
@@ -237,7 +232,7 @@ All pages must include:
 
 ### Maintaining Consistency
 
-- Use embedded CSS (no external stylesheets)
+- Use `style.css` for shared styles (avoid per-page embedded `<style>` blocks)
 - Keep base font size at 11px
 - Use semantic class names (`.navbox`, `.contentbox`, etc.)
 - Include bilingual content in every page
