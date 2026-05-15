@@ -47,12 +47,12 @@ body {
 
 a:link {
   color: #CAC6F9;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:visited {
   color: #7A72BD;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:hover {
@@ -85,10 +85,16 @@ td {
   font-weight: bold;
   display: block;
   padding: 2px 0;
+  text-decoration: none;
 }
 
 .navbox a:hover {
   color: #EBF5EE;
+  text-decoration: underline;
+}
+
+.navbox a:focus {
+  text-decoration: underline;
 }
 
 .sectionhead {
@@ -342,6 +348,31 @@ blockquote {
   margin: 6px 0;
 }
 
+.article-body {
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.article-body ul {
+  margin-top: 4px;
+}
+
+.article-body li p {
+  margin: 0 0 5px 0;
+}
+
+.article-license {
+  color: #CAC6F9;
+  font-size: 11px;
+}
+
+.article-divider {
+  border-top: 1px solid #2A4438;
+  height: 1px;
+  margin: 14px 0;
+  overflow: hidden;
+}
+
 .bilingual-en {
   color: #CAC6F9;
   font-style: italic;
@@ -354,6 +385,16 @@ blockquote {
 }
 
 @media (max-width: 820px) {
+  body {
+    margin: 0;
+    font-size: 13px;
+  }
+
+  .top-banner {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
   table[role="presentation"][width="760"] {
     width: 100% !important;
   }
@@ -365,5 +406,9 @@ blockquote {
 
   table[role="presentation"][width="145"] {
     width: 100% !important;
+  }
+
+  .navbox a {
+    padding: 6px 2px;
   }
 }

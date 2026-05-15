@@ -40,19 +40,20 @@ This is an intentionally retro website—not just a visual theme, but actual old
 ├── gallery.htm         # Photo gallery
 ├── attribution.htm     # Credits and licensing
 ├── style.css          # Shared site stylesheet
+├── _redirects         # Cloudflare redirects for old post paths
 ├── README.md          # This file
 ├── .instructions.md   # Copilot project instructions
 │
-└── posts/             # Blog post directories
+└── posts/             # Blog post files grouped by year
     ├── 2024/
-    │   └── getting-started/index.htm
+    │   └── getting-started.htm
     ├── 2025/
-    │   ├── disabled-and-denied/index.htm
-    │   └── just-autistic/index.htm
+    │   ├── disabled-and-denied.htm
+    │   └── just-autistic.htm
     └── 2026/
-        ├── eimi-fada/index.htm
-        ├── eupl-as-gaeilge/index.htm
-        └── passbolt-to-vaultwarden/index.htm
+        ├── eimi-fada.htm
+        ├── eupl-as-gaeilge.htm
+        └── passbolt-to-vaultwarden.htm
 ```
 
 - `.htm` extension used (early web standard)
@@ -91,13 +92,13 @@ Point your domain to Cloudflare and enable it in Pages settings. Currently point
 
 ### Color Palette
 
-All colors use CSS custom properties for consistency:
+Colors are kept as plain hex values in `style.css` for older-browser compatibility. Use these values consistently rather than introducing near-matches:
 
 ```css
---bg-paper: #EBF5EE         /* Mint Cream — page background */
---text-ink: #1C3A2E         /* Dark Evergreen — main text */
---brand-500: #7A72BD        /* Lavender Indigo — links/accent */
---accent-soft: #CAC6F9      /* Periwinkle — hover/highlights */
+#EBF5EE  /* Mint Cream — light surfaces */
+#1C3A2E  /* Dark Evergreen — main background / strong text */
+#7A72BD  /* Lavender Indigo — links / accents */
+#CAC6F9  /* Periwinkle — hover / highlights */
 ```
 
 **Dark Mode**: Background `#1C3A2E`, text `#EBF5EE` (soft, not pure black/white).
@@ -206,19 +207,17 @@ This is pure static HTML. Just edit `.htm` files and deploy.
 
 ### Local Testing
 
-1. Open any `.htm` file in a browser
-2. Navigation works via relative paths
-3. No local server needed (but recommended for testing)
-
-Optional: Start a simple HTTP server for consistent testing:
+Start a simple HTTP server from the repository root so root-relative assets such as `/style.css`, `/img/`, and `/img/favicon/` resolve the same way they do in production:
 ```bash
 python3 -m http.server 8000
 # Visit http://localhost:8000
 ```
 
+You can still inspect individual `.htm` files directly, but images, CSS, and favicons are most reliable through a local server.
+
 ### Adding New Content
 
-1. **New blog post**: Create directory `posts/YYYY/slug/index.htm`
+1. **New blog post**: Create file `posts/YYYY/slug.htm`
 2. **Update archives**: Add entry to `posts.htm`
 3. **Update homepage**: Add to latest posts section on `index.htm`
 4. **Maintain structure**: Copy HTML template from existing post, update content
@@ -229,6 +228,19 @@ All pages must include:
 - Proper `lang` attributes
 - Navigation sidebar (consistent across all pages)
 - Meta tags (charset, description)
+- The shared favicon block using `/img/favicon/`
+
+Recommended page-head pattern:
+
+```html
+<link rel="stylesheet" href="/style.css" type="text/css">
+<link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="/img/favicon/site.webmanifest">
+<meta name="theme-color" content="#1C3A2E">
+```
 
 ### Maintaining Consistency
 
@@ -237,6 +249,17 @@ All pages must include:
 - Use semantic class names (`.navbox`, `.contentbox`, etc.)
 - Include bilingual content in every page
 - Test in multiple browsers (especially consider retro browser compatibility)
+
+Before committing, run:
+
+```bash
+git diff --check
+jq . img/favicon/site.webmanifest
+rg --files-without-match 'href="/img/favicon/site.webmanifest"' -g '*.htm'
+rg --files-without-match '<meta name="theme-color" content="#1C3A2E">' -g '*.htm'
+```
+
+The two `rg --files-without-match` commands should print no files.
 
 ---
 
