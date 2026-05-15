@@ -35,31 +35,28 @@ This is an intentionally retro website—not just a visual theme, but actual old
 
 ```
 .
-├── index.htm           # Home page
-├── posts.htm           # Archive of blog posts
-├── gallery.htm         # Photo gallery
-├── attribution.htm     # Credits and licensing
-├── style.css          # Shared site stylesheet
-├── _redirects         # Cloudflare redirects for old post paths
-├── README.md          # This file
-├── .instructions.md   # Copilot project instructions
+├── public/             # Cloudflare Pages / Wrangler static output
+│   ├── index.htm       # Home page
+│   ├── posts.htm       # Archive of blog posts
+│   ├── gallery.htm     # Photo gallery
+│   ├── attribution.htm # Credits and licensing
+│   ├── disclaimer.htm  # Site disclaimer
+│   ├── style.css       # Shared site stylesheet
+│   ├── _redirects      # Cloudflare redirects for old post paths
+│   ├── img/            # Images, badges, favicons
+│   └── posts/          # Blog post files grouped by year
+├── wrangler.jsonc      # Cloudflare deploy config
+├── README.md           # This file
+├── .instructions.md    # Project instructions
 │
-└── posts/             # Blog post files grouped by year
-    ├── 2024/
-    │   └── getting-started.htm
-    ├── 2025/
-    │   ├── disabled-and-denied.htm
-    │   └── just-autistic.htm
-    └── 2026/
-        ├── eimi-fada.htm
-        ├── eupl-as-gaeilge.htm
-        └── passbolt-to-vaultwarden.htm
+└── style.md            # Site style guide
 ```
 
 - `.htm` extension used (early web standard)
 - All files are standalone, self-contained
 - Each page includes complete HTML structure (no partials/templating)
 - Relative paths for navigation
+- `public/` is the only directory Cloudflare should serve as the web root
 
 ---
 
@@ -74,9 +71,25 @@ This is an intentionally retro website—not just a visual theme, but actual old
 3. **Build settings**:
    - **Framework preset**: None
    - **Build command**: (leave empty)
-   - **Build output directory**: (leave empty or set to `.`)
+   - **Build output directory**: `public`
    - **Environment**: Production
-4. **Deploy** — Cloudflare automatically serves `.htm` files
+4. **Deploy** — Cloudflare serves `public/` as the site root
+
+The repository also includes `wrangler.jsonc` for Cloudflare's current Wrangler-based static-assets deploy flow:
+
+```bash
+npx wrangler deploy
+```
+
+That command uses `assets.directory = "./public"`, which fixes Wrangler's "Could not detect a directory containing static files" error.
+
+For a direct Pages upload instead, use:
+
+```bash
+npx wrangler pages deploy public
+```
+
+Do not set a Pages deploy command to plain `npx wrangler deploy` if the project is meant to remain a classic Pages deployment; use `npx wrangler pages deploy public`, or leave the deploy command empty and set the build output directory to `public`.
 
 ### Why No Build Step?
 
@@ -182,13 +195,13 @@ Example structure:
 | 2026 | EUPL as Gaeilge | Missing Irish translations in open-source law |
 | 2026 | Passbolt to Vaultwarden | Password manager migration guide |
 
-All posts tagged and linked from `posts.htm`.
+All posts tagged and linked from `public/posts.htm`.
 
 ---
 
 ## TODO & Known Issues
 
-### Gallery Page (`gallery.htm`)
+### Gallery Page (`public/gallery.htm`)
 
 **Status**: Complete and bilingual
 
@@ -209,7 +222,7 @@ This is pure static HTML. Just edit `.htm` files and deploy.
 
 Start a simple HTTP server from the repository root so root-relative assets such as `/style.css`, `/img/`, and `/img/favicon/` resolve the same way they do in production:
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 8000 --directory public
 # Visit http://localhost:8000
 ```
 
@@ -217,9 +230,9 @@ You can still inspect individual `.htm` files directly, but images, CSS, and fav
 
 ### Adding New Content
 
-1. **New blog post**: Create file `posts/YYYY/slug.htm`
-2. **Update archives**: Add entry to `posts.htm`
-3. **Update homepage**: Add to latest posts section on `index.htm`
+1. **New blog post**: Create file `public/posts/YYYY/slug.htm`
+2. **Update archives**: Add entry to `public/posts.htm`
+3. **Update homepage**: Add to latest posts section on `public/index.htm`
 4. **Maintain structure**: Copy HTML template from existing post, update content
 
 All pages must include:
@@ -254,9 +267,9 @@ Before committing, run:
 
 ```bash
 git diff --check
-jq . img/favicon/site.webmanifest
-rg --files-without-match 'href="/img/favicon/site.webmanifest"' -g '*.htm'
-rg --files-without-match '<meta name="theme-color" content="#1C3A2E">' -g '*.htm'
+jq . public/img/favicon/site.webmanifest
+rg --files-without-match 'href="/img/favicon/site.webmanifest"' -g '*.htm' public
+rg --files-without-match '<meta name="theme-color" content="#1C3A2E">' -g '*.htm' public
 ```
 
 The two `rg --files-without-match` commands should print no files.
@@ -294,7 +307,7 @@ The two `rg --files-without-match` commands should print no files.
 
 ## Attribution & Licensing
 
-See `attribution.htm` for full credits, including:
+See `public/attribution.htm` for full credits, including:
 
 - Font sources (Atkinson, Fraunces, JetBrains Mono)
 - Color palette inspiration
@@ -330,7 +343,7 @@ Quick reference:
 
 Refer to:
 - `.instructions.md` — Full project guidelines
-- `attribution.htm` — Resources and credits
+- `public/attribution.htm` — Resources and credits
 - Individual `.htm` files — Code examples and patterns
 
 ---

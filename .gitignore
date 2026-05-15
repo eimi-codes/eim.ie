@@ -50,6 +50,11 @@ Temporary Items
 /functions/\[\[path\]\].js
 /functions/\[\[path\]\].js.map
 
+### Cloudflare / Wrangler ###
+.wrangler/
+node_modules/
+npm-debug.log*
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
