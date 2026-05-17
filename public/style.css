@@ -51,7 +51,7 @@ a:link {
 }
 
 a:visited {
-  color: #7A72BD;
+  color: #CAC6F9;
   text-decoration: underline;
 }
 
@@ -72,6 +72,11 @@ a:focus {
 td {
   font-family: 'Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', Verdana, Arial, sans-serif;
   font-size: 11px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .navbox {
@@ -131,7 +136,7 @@ td {
 .footer-text {
   font-family: 'Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', Verdana, Arial, sans-serif;
   font-size: 10px;
-  color: #7A72BD;
+  color: #CAC6F9;
 }
 
 .footer-text a:link,
@@ -152,7 +157,7 @@ td {
 }
 
 .postdate {
-  color: #7A72BD;
+  color: #CAC6F9;
   font-size: 10px;
 }
 
@@ -184,7 +189,7 @@ td {
 .photo-placeholder {
   background-color: #142820;
   border: 1px dashed #7A72BD;
-  color: #7A72BD;
+  color: #CAC6F9;
   font-size: 10px;
   padding: 40px 8px;
   text-align: center;
@@ -204,7 +209,7 @@ td {
 }
 
 .photo-caption-en {
-  color: #7A72BD;
+  color: #CAC6F9;
   font-size: 10px;
   font-style: italic;
   display: block;
@@ -272,7 +277,7 @@ h2 {
 }
 
 h3 {
-  color: #7A72BD;
+  color: #CAC6F9;
   font-size: 12px;
   margin: 12px 0 4px 0;
 }

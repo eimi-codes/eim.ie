@@ -6,7 +6,7 @@
 [![Uses CSS](https://forthebadge.com/badges/uses-css.svg)](https://forthebadge.com)
 [![Built With Love](https://forthebadge.com/badges/built-with-love.svg)](https://forthebadge.com)
 
-![HTML 4.01](https://img.shields.io/badge/HTML-4.01-7A72BD?style=for-the-badge&labelColor=1C3A2E)
+![HTML5](https://img.shields.io/badge/HTML-standards--mode-7A72BD?style=for-the-badge&labelColor=1C3A2E)
 ![No Frameworks](https://img.shields.io/badge/Frameworks-none-EBF5EE?style=for-the-badge&labelColor=1C3A2E&color=7A72BD)
 ![PowerPC Friendly](https://img.shields.io/badge/PowerPC-friendly-CAC6F9?style=for-the-badge&labelColor=1C3A2E&color=7A72BD)
 ![Gaeilge First](https://img.shields.io/badge/Gaeilge-first-EBF5EE?style=for-the-badge&labelColor=1C3A2E&color=7A72BD)
@@ -20,7 +20,7 @@ A Gaeilge-first personal site for **Éimí Mhic an Ridire**: calm, accessible, r
 
 ## ✨ Gnéithe / Highlights
 
-- 🕰️ HTML 4.01 Transitional, hand-written and lean
+- 🕰️ Standards-mode HTML, hand-written and lean
 - 🌱 Gaeilge first, English alongside it
 - ♿ Accessibility-conscious layout, contrast, focus states, and language markup
 - 💾 Built for old Macs, slow links, and ordinary browsers
@@ -39,6 +39,7 @@ public/
   posts/
   img/
   style.css
+  _headers
 wrangler.jsonc
 LICENSE.md
 style.md
