@@ -4,7 +4,7 @@
 <title>&Oacute; VGA go QuickDraw | Porting VGAPride to Mac OS 9 :: &Eacute;im&iacute; Mhic an Ridire</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="How I ported foone's MS-DOS pride-flag viewer to classic Mac OS, using QuickDraw, PowerPC, and Retro68.">
+<meta name="description" content="How I ported Alice Averlong's MS-DOS pride-flag viewer to classic Mac OS, using QuickDraw, PowerPC, and Retro68.">
 <link rel="stylesheet" href="/style.css?v=quickdrawpride-badge" type="text/css">
 <link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
@@ -28,7 +28,7 @@
 <link rel="author" href="https://eim.ie/">
 <meta property="og:site_name" content="&Eacute;im&iacute; Mhic an Ridire">
 <meta property="og:title" content="&Oacute; VGA go QuickDraw | Porting VGAPride to Mac OS 9 :: &Eacute;im&iacute; Mhic an Ridire">
-<meta property="og:description" content="How I ported foone's MS-DOS pride-flag viewer to classic Mac OS, using QuickDraw, PowerPC, and Retro68.">
+<meta property="og:description" content="How I ported Alice Averlong's MS-DOS pride-flag viewer to classic Mac OS, using QuickDraw, PowerPC, and Retro68.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://eim.ie/posts/2026/vga-to-quickdraw.htm">
 <meta property="og:image" content="https://eim.ie/img/quickdrawpride/cool-crab-trans.png">
@@ -47,7 +47,7 @@
 <meta property="article:tag" content="pride">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="&Oacute; VGA go QuickDraw | Porting VGAPride to Mac OS 9 :: &Eacute;im&iacute; Mhic an Ridire">
-<meta name="twitter:description" content="How I ported foone's MS-DOS pride-flag viewer to classic Mac OS, using QuickDraw, PowerPC, and Retro68.">
+<meta name="twitter:description" content="How I ported Alice Averlong's MS-DOS pride-flag viewer to classic Mac OS, using QuickDraw, PowerPC, and Retro68.">
 <meta name="twitter:image" content="https://eim.ie/img/quickdrawpride/cool-crab-trans.png">
 <meta name="twitter:image:alt" content="QuickDrawPride showing the Cool Crab Trans Flag in a classic Mac OS window">
 <script type="application/ld+json">
@@ -75,7 +75,7 @@
       "mainEntityOfPage": "https://eim.ie/posts/2026/vga-to-quickdraw.htm",
       "url": "https://eim.ie/posts/2026/vga-to-quickdraw.htm",
       "headline": "\u00d3 VGA go QuickDraw | Porting VGAPride to Mac OS 9",
-      "description": "How I ported foone's MS-DOS pride-flag viewer to classic Mac OS, using QuickDraw, PowerPC, and Retro68.",
+      "description": "How I ported Alice Averlong's MS-DOS pride-flag viewer to classic Mac OS, using QuickDraw, PowerPC, and Retro68.",
       "image": "https://eim.ie/img/quickdrawpride/cool-crab-trans.png",
       "datePublished": "2026-07-02",
       "author": {
@@ -139,13 +139,13 @@
 
         <p>Here is a sequence of events that will surprise absolutely nobody who has met me. I found a program. It was for the wrong operating system, on the wrong processor, from the wrong decade. It displayed pride flags. I happen to own a small herd of twenty-five-year-old Macs. You can probably see where this is going.</p>
 
-        <p>The program is <a href="https://github.com/foone/VGAPride">VGAPride</a> by <a href="https://digipres.club/@foone">foone</a>: a lovely, slightly unhinged little MS-DOS application whose entire job is to draw LGBTQ+ pride flags in glorious 640&times;480 VGA. You type <code>VGAPRIDE TRANS</code> and it shows you the trans flag. That is the app. That is the whole app. I think it is wonderful.</p>
+        <p>The program is <a href="https://github.com/foone/VGAPride">VGAPride</a> by <a href="https://averlong.com/">Alice Averlong</a>: a lovely, slightly unhinged little MS-DOS application whose entire job is to draw LGBTQ+ pride flags in glorious 640&times;480 VGA. You type <code>VGAPRIDE TRANS</code> and it shows you the trans flag. That is the app. That is the whole app. I think it is wonderful.</p>
 
         <p>There was only one problem: it runs on DOS, and I wanted it on classic Mac OS. So I ported it. It is called <strong>QuickDrawPride</strong>, it runs natively on PowerPC Macs running Mac OS 8.6 through 9.2.2, and this is the story of how it got there.</p>
 
         <h2>You want to port what, built with what?</h2>
 
-        <p>foone built VGAPride with Borland Turbo C++ 3.0 and Turbo Assembler 5.0, which is a very particular sort of time travel. It talks to the screen through the Borland Graphics Interface, expects a DOS-shaped world, and its original bitmap path involves x86 assembly. None of that, and I really cannot stress this enough, exists on a PowerPC Mac. Different graphics system, different processor, different everything.</p>
+        <p><a href="https://averlong.com/">Alice Averlong</a> built VGAPride with Borland Turbo C++ 3.0 and Turbo Assembler 5.0, which is a very particular sort of time travel. It talks to the screen through the Borland Graphics Interface, expects a DOS-shaped world, and its original bitmap path involves x86 assembly. None of that, and I really cannot stress this enough, exists on a PowerPC Mac. Different graphics system, different processor, different everything.</p>
 
         <p>On paper, this is a total rewrite.</p>
 
@@ -196,7 +196,7 @@
         <p>This is a port. It stands very happily on other people's work, and it would be rotten of me not to say so plainly:</p>
 
         <ul>
-          <li><p><strong>foone</strong> made VGAPride, the flag data, and the lovingly strange original project that started all this. VGAPride is GPL-3.0, and so is QuickDrawPride.</p></li>
+          <li><p><strong><a href="https://averlong.com/">Alice Averlong</a></strong> made <a href="https://github.com/foone/VGAPride">VGAPride</a>, the flag data, and the lovingly strange original project that started all this. You can also find Alice on <a href="https://github.com/foone">GitHub</a>, <a href="https://digipres.club/@foone">Mastodon</a>, and <a href="https://bsky.app/profile/alice.averlong.com">Bluesky</a>. VGAPride is GPL-3.0, and so is QuickDrawPride.</p></li>
           <li><p><strong>Autistic Empire</strong> created the Autistic Pride Flag asset, used under Creative Commons Attribution-ShareAlike 4.0.</p></li>
           <li><p><strong>Jim Leonard</strong>'s <code>lz4_8088</code> remains credited from the original DOS build, even though the Mac port does not use that decompression path.</p></li>
           <li><p><strong>Retro68</strong> makes this whole modern-to-classic Mac development loop viable without needing to write the entire thing on the old hardware itself.</p></li>
