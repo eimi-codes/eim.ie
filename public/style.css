@@ -351,6 +351,56 @@ blockquote {
   text-align: center;
 }
 
+.split-badge {
+  display: inline-flex;
+  max-width: 100%;
+  border: 1px solid #7A72BD;
+  border-radius: 3px;
+  overflow: hidden;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.split-badge-wrap {
+  margin: 10px 0 14px 0;
+  text-align: center;
+}
+
+.split-badge a:link,
+.split-badge a:visited {
+  display: block;
+  padding: 5px 9px;
+  text-decoration: none;
+}
+
+.split-badge .split-badge-left:link,
+.split-badge .split-badge-left:visited {
+  background-color: #0A1810;
+  color: #CAC6F9;
+}
+
+.split-badge .split-badge-right:link,
+.split-badge .split-badge-right:visited {
+  background-color: #CAC6F9;
+  color: #0A1810;
+}
+
+.split-badge .split-badge-left:hover,
+.split-badge .split-badge-left:active,
+.split-badge .split-badge-left:focus,
+.split-badge .split-badge-right:hover,
+.split-badge .split-badge-right:active,
+.split-badge .split-badge-right:focus {
+  background-color: #EBF5EE;
+  color: #0A1810;
+  text-decoration: underline;
+}
+
 .shoutout {
   background-color: #0F1F18;
   border: 1px solid #7A72BD;

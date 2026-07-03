@@ -25,31 +25,47 @@ A Gaeilge-first personal site for **Éimí Mhic an Ridire**: calm, accessible, r
 - ♿ Accessibility-conscious layout, contrast, focus states, and language markup
 - 💾 Built for old Macs, slow links, and ordinary browsers
 - 🧾 Metadata-rich: Open Graph, `rel="me"`, and Schema.org
-- 🛠️ No framework, no build step, no nonsense
+- 🛠️ No framework, tiny no-dependency build step, no nonsense
 
 ## 🗂️ Struchtúr / Structure
 
 ```text
 public/
-  index.htm
-  posts.htm
-  gallery.htm
-  attribution.htm
-  disclaimer.htm
-  posts/
   img/
+  posts/
+  *.htm
   style.css
   _headers
+src/
+  includes/
+  pages/
+tools/
+  build.mjs
+package.json
 wrangler.jsonc
 LICENSE.md
 style.md
 ```
 
-## 🧪 Rith go háitiúil / Run Locally
+Edit pages in `src/pages/` and shared site chrome in `src/includes/`.
+The generated site still lives in `public/`.
 
-Open `public/index.htm`, or serve the folder:
+## 🛠️ Tógáil / Build
 
 ```sh
+npm run build
+```
+
+There are no package dependencies. The build script uses Node.js to combine
+`src/pages/` with the shared includes and writes static `.htm` files to
+`public/`.
+
+## 🧪 Rith go háitiúil / Run Locally
+
+Build the site, then open `public/index.htm`, or serve the folder:
+
+```sh
+npm run build
 cd public
 python3 -m http.server 8000
 ```
@@ -58,7 +74,12 @@ Then visit `http://localhost:8000`.
 
 ## 🚀 Foilsiú / Deploy
 
-Static assets live in `public/`. Cloudflare Workers/Pages reads that from `wrangler.jsonc`.
+Static assets live in `public/`. `wrangler.jsonc` runs `npm run build` before
+Wrangler deploys, then publishes `public/` as the static assets directory.
+
+For Cloudflare Workers Builds / Git integration, also set the build command to
+`npm run build` in Cloudflare, because Workers Builds has its own build-command
+setting.
 
 ## 📜 Ceadúnas / License
 

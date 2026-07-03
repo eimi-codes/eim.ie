@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>&Oacute; VGA go QuickDraw | Porting VGAPride to Mac OS 9 :: &Eacute;im&iacute; Mhic an Ridire</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How I ported foone's MS-DOS pride-flag viewer to classic Mac OS, using QuickDraw, PowerPC, and Retro68.">
+<link rel="stylesheet" href="/style.css?v=quickdrawpride-badge" type="text/css">
+<link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="/img/favicon/site.webmanifest">
+<meta name="theme-color" content="#1C3A2E">
+<meta name="keywords" content="PowerPC, Mac OS 9, Mac OS 8.6, QuickDraw, Retro68, VGAPride, QuickDrawPride, pride flags, classic Mac, FOSS">
+<meta name="author" content="&Eacute;im&iacute; Mhic an Ridire">
+<meta name="creator" content="&Eacute;im&iacute; Mhic an Ridire">
+<meta name="publisher" content="&Eacute;im&iacute; Mhic an Ridire">
+<meta name="robots" content="index, follow">
+<meta name="fediverse:creator" content="@eimi@mastodon.ie">
+<link rel="me" href="https://bsky.app/profile/eim.ie">
+<link rel="me" href="https://github.com/eimi-codes">
+<link rel="me" href="https://mastodon.ie/@eimi">
+<link rel="me" href="https://eimiandcoffee.tumblr.com/">
+<link rel="me" href="https://ga.wikipedia.org/wiki/User:%C3%89im%C3%ADvici">
+<link rel="me" href="https://en.wikipedia.org/wiki/User:%C3%89im%C3%ADvici">
+<link rel="canonical" href="https://eim.ie/posts/2026/vga-to-quickdraw.htm">
+<link rel="author" href="https://eim.ie/">
+<meta property="og:site_name" content="&Eacute;im&iacute; Mhic an Ridire">
+<meta property="og:title" content="&Oacute; VGA go QuickDraw | Porting VGAPride to Mac OS 9 :: &Eacute;im&iacute; Mhic an Ridire">
+<meta property="og:description" content="How I ported foone's MS-DOS pride-flag viewer to classic Mac OS, using QuickDraw, PowerPC, and Retro68.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://eim.ie/posts/2026/vga-to-quickdraw.htm">
+<meta property="og:image" content="https://eim.ie/img/quickdrawpride/cool-crab-trans.png">
+<meta property="og:image:width" content="783">
+<meta property="og:image:height" content="569">
+<meta property="og:image:alt" content="QuickDrawPride showing the Cool Crab Trans Flag in a classic Mac OS window">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="ga_IE">
+<meta property="article:published_time" content="2026-07-02">
+<meta property="article:author" content="https://eim.ie/">
+<meta property="article:tag" content="powerpc">
+<meta property="article:tag" content="mac os 9">
+<meta property="article:tag" content="retro68">
+<meta property="article:tag" content="quickdraw">
+<meta property="article:tag" content="FOSS">
+<meta property="article:tag" content="pride">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="&Oacute; VGA go QuickDraw | Porting VGAPride to Mac OS 9 :: &Eacute;im&iacute; Mhic an Ridire">
+<meta name="twitter:description" content="How I ported foone's MS-DOS pride-flag viewer to classic Mac OS, using QuickDraw, PowerPC, and Retro68.">
+<meta name="twitter:image" content="https://eim.ie/img/quickdrawpride/cool-crab-trans.png">
+<meta name="twitter:image:alt" content="QuickDrawPride showing the Cool Crab Trans Flag in a classic Mac OS window">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://eim.ie/#eimi",
+      "name": "\u00c9im\u00ed Mhic an Ridire",
+      "url": "https://eim.ie/",
+      "image": "https://eim.ie/img/EmaR_26_square.png",
+      "sameAs": [
+        "https://bsky.app/profile/eim.ie",
+        "https://github.com/eimi-codes",
+        "https://mastodon.ie/@eimi",
+        "https://eimiandcoffee.tumblr.com/",
+        "https://ga.wikipedia.org/wiki/User:%C3%89im%C3%ADvici",
+        "https://en.wikipedia.org/wiki/User:%C3%89im%C3%ADvici"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://eim.ie/posts/2026/vga-to-quickdraw.htm#article",
+      "mainEntityOfPage": "https://eim.ie/posts/2026/vga-to-quickdraw.htm",
+      "url": "https://eim.ie/posts/2026/vga-to-quickdraw.htm",
+      "headline": "\u00d3 VGA go QuickDraw | Porting VGAPride to Mac OS 9",
+      "description": "How I ported foone's MS-DOS pride-flag viewer to classic Mac OS, using QuickDraw, PowerPC, and Retro68.",
+      "image": "https://eim.ie/img/quickdrawpride/cool-crab-trans.png",
+      "datePublished": "2026-07-02",
+      "author": {
+        "@id": "https://eim.ie/#eimi"
+      },
+      "publisher": {
+        "@id": "https://eim.ie/#eimi"
+      },
+      "keywords": [
+        "powerpc",
+        "mac os 9",
+        "retro68",
+        "quickdraw",
+        "FOSS",
+        "pride"
+      ],
+      "inLanguage": [
+        "en",
+        "ga"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<!-- sidebar-extra:start -->
+<!-- sidebar-extra:end -->
+
+<!-- content:start -->
+  <td>
+    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr><td class="contentbox" id="main-content" role="main">
+      <div class="sectionhead">:: Post ::</div>
+      <div class="contentinner">
+        <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="3" color="#CAC6F9"><b>&Oacute; VGA go QuickDraw | Porting VGAPride to Mac OS 9</b></font><br>
+        <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" class="postdate">by &Eacute;im&iacute; Mhic an Ridire &nbsp;|&nbsp; 02 July 2026</font><br>
+        <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1">
+          <span class="tag">powerpc</span>
+          <span class="tag">mac os 9</span>
+          <span class="tag">retro68</span>
+          <span class="tag">quickdraw</span>
+          <span class="tag">FOSS</span>
+          <span class="tag">pride</span>
+        </font>
+        <br><br>
+
+        <div class="article-body">
+
+        <div style="text-align:center; margin:12px 0;">
+          <img src="/img/quickdrawpride/cool-crab-trans.png" alt="QuickDrawPride showing the Cool Crab Trans Flag in a classic Mac OS window" width="783" height="569" loading="eager" decoding="async" style="max-width:100%; border:1px solid #7A72BD; padding:4px; background:#0A1810;">
+          <br><font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9"><i>QuickDrawPride showing the Cool Crab Trans Flag.</i></font>
+        </div>
+
+        <div class="split-badge-wrap">
+          <span class="split-badge" role="group" aria-label="QuickDrawPride project links">
+            <a class="split-badge-left" href="https://github.com/eimi-codes/QuickDrawPride" aria-label="Open QuickDrawPride source code">Source Code</a>
+            <a class="split-badge-right" href="https://github.com/eimi-codes/QuickDrawPride/releases" aria-label="Download QuickDrawPride releases">Download Releases</a>
+          </span>
+        </div>
+
+        <p>Here is a sequence of events that will surprise absolutely nobody who has met me. I found a program. It was for the wrong operating system, on the wrong processor, from the wrong decade. It displayed pride flags. I happen to own a small herd of twenty-five-year-old Macs. You can probably see where this is going.</p>
+
+        <p>The program is <a href="https://github.com/foone/VGAPride">VGAPride</a> by <a href="https://digipres.club/@foone">foone</a>: a lovely, slightly unhinged little MS-DOS application whose entire job is to draw LGBTQ+ pride flags in glorious 640&times;480 VGA. You type <code>VGAPRIDE TRANS</code> and it shows you the trans flag. That is the app. That is the whole app. I think it is wonderful.</p>
+
+        <p>There was only one problem: it runs on DOS, and I wanted it on classic Mac OS. So I ported it. It is called <strong>QuickDrawPride</strong>, it runs natively on PowerPC Macs running Mac OS 8.6 through 9.2.2, and this is the story of how it got there.</p>
+
+        <h2>You want to port what, built with what?</h2>
+
+        <p>foone built VGAPride with Borland Turbo C++ 3.0 and Turbo Assembler 5.0, which is a very particular sort of time travel. It talks to the screen through the Borland Graphics Interface, expects a DOS-shaped world, and its original bitmap path involves x86 assembly. None of that, and I really cannot stress this enough, exists on a PowerPC Mac. Different graphics system, different processor, different everything.</p>
+
+        <p>On paper, this is a total rewrite.</p>
+
+        <p>On paper.</p>
+
+        <h2>The flags are data, not code</h2>
+
+        <p>The realisation that turned a frightening rewrite into a genuinely fun project was that most of VGAPride's flags are not drawing <em>programs</em> so much as drawing <em>recipes</em>. A rectangle here, a triangle there, this colour, that position. The rainbow flag is, blessedly, six coloured rectangles stacked in a row. The whole flag vocabulary is made from a small set of primitives: rectangles, triangles, quads, ellipses, polygons, stars, and lines, all laid out on a fixed 640&times;480 grid.</p>
+
+        <p>And here is the lucky bit: that grid already thinks like QuickDraw. The origin is in the top-left, x moves right, y moves down, and coordinates are plain little integers. So the job was not "redraw every pride flag by hand." It was "teach the Mac what each of these drawing commands means, then let the flag definitions come along for the ride."</p>
+
+        <h2>Building the bridge</h2>
+
+        <p>That bridge is the QuickDraw renderer. A VGAPride rectangle becomes <code>PaintRect</code>. An ellipse becomes <code>PaintOval</code>. A polygon becomes a QuickDraw polygon. Lines and stars get mapped across at the same 4:3 proportions. The port scales the original 640&times;480 coordinate space into whatever preview rectangle the Mac window has available, then asks Color QuickDraw to do the honest work.</p>
+
+        <p>A few DOS-isms had to be quietly shown the door. The original's world includes segmented-memory habits, VGA-era palette thinking, DOS keyboard expectations, and a command-line interface. On a PowerPC Mac with Color QuickDraw, the drawing model is much more direct: pick an RGB colour, draw the shape, move on with your life. Thousands or millions of colours are still the happy path, though 256 colours will do what classic Mac palettes do and occasionally make artistic decisions of their own.</p>
+
+        <h2>A wee improvement: the selector</h2>
+
+        <p>The DOS original is a command-line tool. You type a flag name, the flag appears. That is perfectly sensible for DOS, but classic Mac OS is a double-clicking, menu-bar-having, window-dragging creature. So QuickDrawPride opens into a proper Mac window: a scrolling list of flags down one side, and a live preview beside it.</p>
+
+        <p>Click a name, use the keyboard, or start typing the beginning of a flag name and the preview updates immediately. The designer or source credit sits underneath the flag, right where you can see it. It is quicker, it is friendlier, and, because I am constitutionally unable to leave this unsaid, it means you can actually find things. Accessibility is not a decorative garnish, a chro&iacute;.</p>
+
+        <h2>The crab problem</h2>
+
+        <p>Not every flag is tidy geometry. Some of VGAPride's most delightful bits are bitmap artwork, including the sunglasses-wearing Cool Crab flags. These are far too detailed to fake with rectangles unless you have infinite time and a worrying relationship with pixels.</p>
+
+        <p>The DOS version has its own VGA-shaped way of dealing with that. The Mac port takes a different route: the bitmap flags are regenerated from the source artwork into indexed bitmap data, then drawn through QuickDraw-compatible scanline fills. In other words, the port does not try to make a PowerPC Mac impersonate the original x86 decompression path. It keeps the artwork, changes the delivery mechanism, and lets the crab survive the journey.</p>
+
+        <p>The crab is important.</p>
+
+        <h2>Building a Mac OS 9 app in 2026</h2>
+
+        <p>I built the whole thing with <a href="https://github.com/autc04/Retro68">Retro68</a>, a genuinely wonderful modern toolchain that cross-compiles classic Mac software from an ordinary present-day computer. I write the code on my modern machine, CMake points at the Retro68 PowerPC toolchain, and out comes a real classic Mac application. Old-fashioned software, comfortable modern workflow.</p>
+
+        <p>Then I got a little carried away, as one does, and set up GitHub Actions. Every push builds the app inside the official Retro68 container, and tagged releases publish the useful classic Mac artifacts automatically. There is something deeply funny about a modern CI pipeline whose final product is a Mac OS 9 application, and I love it dearly.</p>
+
+        <h2>The download you actually want</h2>
+
+        <p>One last classic-Mac trap, for anyone playing along at home: old Macs store applications as more than one stream of data. Modern filesystems are very good at accidentally sanding the Mac-ness off those files. So, for a real Mac OS transfer, use the MacBinary release asset:</p>
+
+        <div class="tip"><code>QuickDrawPride.bin</code></div>
+
+        <p>MacBinary keeps the data fork, resource fork, and <code>APPL</code>/<code>QDPR</code> type and creator metadata intact. The release workflow also publishes an HFS disk image, <code>QuickDrawPride.dsk</code>, which is handy for emulators and disk-image tooling. The raw application files are useful build products, but the <code>.bin</code> is the one I would hand to a real Mac without fuss.</p>
+
+        <h2>Credits, with gratitude</h2>
+
+        <p>This is a port. It stands very happily on other people's work, and it would be rotten of me not to say so plainly:</p>
+
+        <ul>
+          <li><p><strong>foone</strong> made VGAPride, the flag data, and the lovingly strange original project that started all this. VGAPride is GPL-3.0, and so is QuickDrawPride.</p></li>
+          <li><p><strong>Autistic Empire</strong> created the Autistic Pride Flag asset, used under Creative Commons Attribution-ShareAlike 4.0.</p></li>
+          <li><p><strong>Jim Leonard</strong>'s <code>lz4_8088</code> remains credited from the original DOS build, even though the Mac port does not use that decompression path.</p></li>
+          <li><p><strong>Retro68</strong> makes this whole modern-to-classic Mac development loop viable without needing to write the entire thing on the old hardware itself.</p></li>
+        </ul>
+
+        <h2>Faigh &eacute; / Get it</h2>
+
+        <p>QuickDrawPride lives on <a href="https://github.com/eimi-codes/QuickDrawPride">GitHub</a>, and ready-to-run builds are on the <a href="https://github.com/eimi-codes/QuickDrawPride/releases">releases page</a>. If you have a PowerPC Mac running Mac OS 8.6-9.2.2, you are all set. If you have SheepShaver, that works too.</p>
+
+        <h2>Where next?</h2>
+
+        <p>QuickDrawPride works, but a first release is really just an excuse to start making notes for the next one. A few things already on the list:</p>
+
+        <ul>
+          <li><p>Add Distressed Egg's <a href="https://distressedegg.fun/qvp">Queer Villain Pride flag</a>, with the correct attribution for its CC BY-NC 4.0 licence.</p></li>
+          <li><p>Replace the drawn scrollbar hint with a real classic Mac scroll bar control.</p></li>
+          <li><p>Improve clipping and ellipsis handling for long flag names.</p></li>
+          <li><p>Refine resize-aware spacing around the preview and credit line.</p></li>
+          <li><p>Polish the About box and menu behaviour.</p></li>
+          <li><p>Add a full-screen view for the selected flag, with a quick way back to the list.</p></li>
+        </ul>
+
+        <p>There is something I find quietly lovely about pride flags rendered on a machine from 2001, in a graphics toolbox older than that, drawn one honest shape at a time. Old hardware does not have to be a museum piece behind glass. Sometimes it just wants to fly a flag.</p>
+
+        <div class="split-badge-wrap">
+          <span class="split-badge" role="group" aria-label="QuickDrawPride project links">
+            <a class="split-badge-left" href="https://github.com/eimi-codes/QuickDrawPride" aria-label="Open QuickDrawPride source code">Source Code</a>
+            <a class="split-badge-right" href="https://github.com/eimi-codes/QuickDrawPride/releases" aria-label="Download QuickDrawPride releases">Download Releases</a>
+          </span>
+        </div>
+
+        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="8" bgcolor="#0F1F18">
+        <tr><td align="center">
+          <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="3" color="#CAC6F9"><b>Is mise &Eacute;im&iacute;. Le br&oacute;d.</b></font><br>
+          <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="2" color="#CAC6F9"><i>(I am &Eacute;im&iacute;. With pride.)</i></font>
+        </td></tr>
+        </table>
+
+        </div>
+        <br>
+        <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9">
+          &laquo; <a href="../../posts.htm" lang="ga">Ar ais go gach post <span lang="en">| Back to all posts</span></a>
+        </font>
+      </div>
+    </td></tr>
+    </table>
+  </td>
+<!-- content:end -->
