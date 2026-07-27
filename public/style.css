@@ -186,6 +186,11 @@ img {
   text-align: center;
 }
 
+.photo-frame img {
+  display: block;
+  margin: 0 auto;
+}
+
 .photo-placeholder {
   background-color: #142820;
   border: 1px dashed #7A72BD;
@@ -197,20 +202,23 @@ img {
 
 .photo-caption {
   color: #CAC6F9;
-  font-size: 10px;
-  padding: 6px 4px 2px 4px;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 8px 4px 2px 4px;
   display: block;
 }
 
 .photo-caption-ga {
   color: #CAC6F9;
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 1.5;
   display: block;
 }
 
 .photo-caption-en {
   color: #CAC6F9;
-  font-size: 10px;
+  font-size: 12px;
+  line-height: 1.5;
   font-style: italic;
   display: block;
 }
