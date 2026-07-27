@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 3 3">
+  <mask id="m">
+    <rect width="3" height="3" fill="#fff" rx="0.69375" />
+  </mask>
+  <g mask="url(#m)" transform="scale(0.97)" transform-origin="center">
+    <rect width="3" height="3" fill="#340d46" />
+    <rect width="3" height="2" fill="#e40052" />
+    <rect width="3" height="1" fill="#009ee2" />
+    <path d="M0 3 2 1 1 0H0" fill="#fefefe" />
+    <path
+      fill="#fcc000"
+      d="m.53 1c-.042-.0335-.0748-.0816-.0935-.1322-.1003-.2705.1798-.5276.4453-.398.0523.0255.0902.0705.1336.108l.4234.4222-.4234.4222c-.0434.0375-.0813.0825-.1336.108-.2655.1296-.5456-.1275-.4453-.398.0187-.0506.0515-.0987.0935-.1322z" />
+  </g>
+</svg>

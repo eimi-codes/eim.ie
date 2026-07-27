@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 8 8">
+  <mask id="m">
+    <rect width="8" height="8" fill="#fff" rx="1.85" />
+  </mask>
+  <g mask="url(#m)" transform="scale(0.97)" transform-origin="center">
+    <rect width="8" height="8" fill="#fed700" />
+    <circle cx="4" cy="4" r="2.03125" fill="none" stroke="#8d03b0" stroke-width="0.6875" />
+  </g>
+</svg>
