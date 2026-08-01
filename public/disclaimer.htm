@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ga">
 <head>
-<title>S&eacute;anadh L&aacute;ithre&aacute;n Gr&eacute;as&aacute;in | Website Disclaimer :: &Eacute;im&iacute; Mhic an Ridire</title>
+<title>S&eacute;anadh L&aacute;ithre&aacute;n Gr&eacute;as&aacute;in :: &Eacute;im&iacute; Mhic an Ridire</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="S&eacute;anadh l&aacute;ithre&aacute;n gr&eacute;as&aacute;in eim.ie &mdash; Website disclaimer for eim.ie.">
@@ -81,11 +81,12 @@
   ]
 }
 </script>
+<script src="/site-settings.js"></script>
 </head>
 <body bgcolor="#1C3A2E" text="#EBF5EE" link="#CAC6F9" vlink="#CAC6F9" alink="#EBF5EE">
-<a href="#main-content" class="skip-link" lang="ga">L&eacute;im go pr&iacute;omh-&aacute;bhar | Skip to main content</a>
+<a href="#main-content" class="skip-link"><span lang="ga">L&eacute;im go pr&iacute;omh-&aacute;bhar</span> | <span lang="en">Skip to main content</span></a>
 
-<div class="top-banner" aria-label="F&aacute;ilte an tsu&iacute;mh | Site greeting" lang="ga">
+<div class="top-banner" lang="ga">
   &#9733; F&aacute;ilte go dt&iacute; su&iacute;omh &Eacute;im&iacute;! &#9733; <span lang="en">Welcome to &Eacute;im&iacute;'s Corner of the Internet!</span> &#9733; F&aacute;ilte! &#9733;
 </div>
 
@@ -95,12 +96,12 @@
   <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="8" bgcolor="#142820">
   <tr>
     <td>
-      <h1 class="site-title">&Eacute;im&iacute; Mhic an Ridire</h1>
+      <h1 class="site-title irish-name" lang="ga">&Eacute;im&iacute; Mhic an Ridire</h1>
       <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9" lang="ga">:: bean Ghr&eacute;as&aacute;in :: tacad&oacute;ir inrochtaineachta :: d&iacute;ograiseoir PowerPC ::</font><br>
       <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9" lang="en">:: web developer :: accessibility advocate :: PowerPC enthusiast ::</font>
     </td>
     <td align="right" valign="bottom">
-      <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9"><span lang="ga">[ nuashonraithe: Bealtaine 2026 ]</span><br><span lang="en">[ last updated: May 2026 ]</span></font>
+      <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9"><span lang="ga">[ nuashonraithe: 1 L&uacute;nasa 2026 ]</span><br><span lang="en">[ last updated: 1 August 2026 ]</span></font>
     </td>
   </tr>
   </table>
@@ -113,9 +114,65 @@
 <tr valign="top">
 
   <td width="145">
+    <details class="site-settings" id="site-settings">
+      <summary><span lang="ga">Roghanna su&iacute;mh</span> | <span lang="en">Site settings</span></summary>
+      <form id="site-settings-form">
+        <fieldset>
+          <legend><span lang="ga">L&eacute;itheoireacht</span> | <span lang="en">Reading</span></legend>
+
+          <label for="setting-font"><span lang="ga">Cl&oacute;</span> | <span lang="en">Font</span></label>
+          <select id="setting-font" name="font">
+            <option value="default" lang="en">Site default</option>
+            <option value="atkinson" lang="en">Atkinson Hyperlegible Next</option>
+            <option value="anois" lang="ga">Anois L&uacute;il</option>
+            <option value="lexend" lang="en">Lexend</option>
+            <option value="opendyslexic" lang="en">OpenDyslexic</option>
+            <option value="opensans" lang="en">Open Sans</option>
+            <option value="sourceserif" lang="en">Source Serif 4</option>
+            <option value="system" lang="en">System font</option>
+          </select>
+
+          <label for="setting-size"><span lang="ga">M&eacute;id an t&eacute;acs</span> | <span lang="en">Text size</span></label>
+          <select id="setting-size" name="size">
+            <option value="100">100%</option>
+            <option value="125">125%</option>
+            <option value="150">150%</option>
+            <option value="200">200%</option>
+          </select>
+
+          <label for="setting-theme"><span lang="ga">Dathanna</span> | <span lang="en">Colours</span></label>
+          <select id="setting-theme" name="theme">
+            <option value="light" lang="en">Light</option>
+            <option value="dark" lang="en">Dark</option>
+            <option value="reactive" lang="en" selected>Reactive (device setting)</option>
+            <option value="high-contrast" lang="en">High-Contrast</option>
+            <option value="monochrome" lang="en">Pure black and white</option>
+          </select>
+
+          <label for="setting-width"><span lang="ga">Leithead l&eacute;itheoireachta</span> | <span lang="en">Reading width</span></label>
+          <select id="setting-width" name="width">
+            <option value="55" lang="en">Narrow (55 characters)</option>
+            <option value="68" lang="en">Comfortable (68 characters)</option>
+            <option value="80" lang="en">Wide (80 characters)</option>
+          </select>
+
+          <label for="setting-spacing"><span lang="ga">Sp&aacute;s&aacute;il</span> | <span lang="en">Spacing</span></label>
+          <select id="setting-spacing" name="spacing">
+            <option value="standard" lang="en">Standard</option>
+            <option value="relaxed" lang="en">Relaxed (AAA)</option>
+          </select>
+
+          <button type="button" id="site-settings-reset"><span lang="ga">Athshocraigh</span> | <span lang="en">Reset</span></button>
+          <p class="settings-note" lang="en">Settings are saved only in this browser. Browser zoom also remains available.</p>
+          <p class="settings-status" id="settings-status" role="status" aria-live="polite"></p>
+        </fieldset>
+      </form>
+    </details>
+    <noscript><p class="settings-noscript" lang="en">Site settings need JavaScript; browser zoom and reader settings still work without it.</p></noscript>
+
     <table role="presentation" width="145" border="0" cellspacing="0" cellpadding="0">
     <tr><td class="navbox">
-      <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9"><b>:: N&Aacute;ISC | LINKS ::</b></font><br>
+      <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9"><b>:: <span lang="ga">N&Aacute;ISC</span> | <span lang="en">LINKS</span> ::</b></font><br>
       <a href="/" lang="ga">&#9658; Leathanach Baile <span lang="en">| Home</span></a>
       <a href="gallery.htm" lang="ga">&#9658; Gail&eacute;ire <span lang="en">| Gallery</span></a>
       <a href="posts.htm" lang="ga">&#9658; Gach Postanna <span lang="en">| All Posts</span></a>
@@ -123,7 +180,7 @@
     </table><br>
     <table role="presentation" width="145" border="0" cellspacing="0" cellpadding="0">
     <tr><td class="navbox">
-      <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9"><b>:: S&Oacute;ISIALTA | SOCIAL ::</b></font><br>
+      <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9"><b>:: <span lang="ga">S&Oacute;ISIALTA</span> | <span lang="en">SOCIAL</span> ::</b></font><br>
       <a href="https://bsky.app/profile/eim.ie" rel="me">&#9658; Bluesky</a>
       <a href="https://github.com/eimi-codes" rel="me">&#9658; GitHub</a>
       <a href="https://mastodon.ie/@eimi" rel="me">&#9658; Mastodon</a>
@@ -135,7 +192,7 @@
 
     <table role="presentation" width="145" border="0" cellspacing="0" cellpadding="0">
     <tr><td class="navbox" align="left">
-      <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9"><b>:: SUAITHEANTAIS | BADGES ::</b></font><br><br>
+      <font face="Atkinson Hyperlegible Next, Verdana, Arial" size="1" color="#CAC6F9"><b>:: <span lang="ga">SUAITHEANTAIS</span> | <span lang="en">BADGES</span> ::</b></font><br><br>
       <img src="/img/poweredbymac.gif" alt="Powered by Mac" width="88" height="31" border="0"><br>
       <img src="/img/macos.gif" alt="Made with MacOS" width="88" height="31" border="0"><br>
       <img src="/img/any_browser.gif" alt="Best viewed with any browser" width="88" height="31" border="0"><br>
@@ -151,7 +208,7 @@
   <td>
     <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr><td class="contentbox" id="main-content" role="main">
-      <div class="sectionhead">:: S&eacute;anadh L&aacute;ithre&aacute;n Gr&eacute;as&aacute;in | Website Disclaimer ::</div>
+      <div class="sectionhead">:: <span lang="ga">S&eacute;anadh L&aacute;ithre&aacute;n Gr&eacute;as&aacute;in</span> | <span lang="en">Website Disclaimer</span> ::</div>
       <div class="contentinner">
 
         <div class="legal-meta">
@@ -309,7 +366,7 @@
   <table role="presentation" class="footer-table">
   <tr><td class="footer-cell">
     <span class="footer-text">
-      &copy; 2026 &Eacute;im&iacute; Mhic an Ridire &nbsp;::&nbsp;
+      &copy; 2026 <span class="irish-name" lang="ga">&Eacute;im&iacute; Mhic an Ridire</span> &nbsp;::&nbsp;
       <a href="/">eim.ie</a> &nbsp;::&nbsp;
       <a href="attribution.htm" lang="ga">Bu&iacute;och&aacute;s <span lang="en">| Attribution</span></a> &nbsp;::&nbsp;
       <a href="disclaimer.htm" lang="ga">S&eacute;anadh <span lang="en">| Disclaimer</span></a> &nbsp;::&nbsp;

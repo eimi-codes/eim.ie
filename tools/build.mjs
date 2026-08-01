@@ -58,7 +58,10 @@ function parsePage(source, sourcePath) {
   );
 
   return {
-    head: head.trimEnd(),
+    head: head.trimEnd().replace(
+      /<\/head>$/i,
+      '<script src="/site-settings.js"></script>\n</head>',
+    ),
     content: trimOuterBlankLines(content),
     sidebarExtra,
     headerExtra: attrs.headerExtra ?? "",
