@@ -604,3 +604,825 @@ blockquote {
     padding: 6px 2px;
   }
 }
+
+/*
+  Accessibility layer (2026)
+
+  The original late-1990s-inspired HTML remains intentionally simple. This
+  layer gives it a root-relative type scale, responsive reading measure, local
+  font choices, and selectable colour/spacing preferences without making the
+  document depend on JavaScript for basic reading.
+*/
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("/fonts/web/AtkinsonHyperlegibleNext-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("/fonts/web/AtkinsonHyperlegibleNext-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("/fonts/web/AtkinsonHyperlegibleNext-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("/fonts/web/AtkinsonHyperlegibleNext-BoldItalic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Anois Lúil";
+  src: url("/fonts/Anois%20Lu%CC%81il/Anois-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Anois Lúil";
+  src: url("/fonts/Anois%20Lu%CC%81il/Anois-RegularItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Anois Lúil";
+  src: url("/fonts/Anois%20Lu%CC%81il/Anois-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Anois Lúil";
+  src: url("/fonts/Anois%20Lu%CC%81il/Anois-BoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lexend";
+  src: url("/fonts/Lexend/Lexend-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("/fonts/web/OpenDyslexic-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("/fonts/web/OpenDyslexic-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/web/OpenSans-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/web/OpenSans-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/web/SourceSerif4-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Mono";
+  src: url("/fonts/Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/web/SourceSerif4-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --font-body: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", Verdana, Arial, sans-serif;
+  --font-irish: "Anois Lúil", "Atkinson Hyperlegible Next", Verdana, Arial, sans-serif;
+  --font-selected: var(--font-body);
+  --page-bg: #1C3A2E;
+  --surface: #0F1F18;
+  --surface-alt: #142820;
+  --surface-deep: #0A1810;
+  --text: #EBF5EE;
+  --text-secondary: #D8D4FF;
+  --link: #D8D4FF;
+  --accent: #A39CE8;
+  --border: #A39CE8;
+  --danger: #FF7D7D;
+  --danger-bg: #2B0E12;
+  --warning: #FFE08A;
+  --warning-bg: #2A2108;
+  --reading-width: 68ch;
+  --line-height: 1.65;
+  --paragraph-gap: 1.25em;
+  --letter-spacing: normal;
+  --word-spacing: normal;
+  color-scheme: dark;
+  font-size: 100%;
+}
+
+html[data-size="125"] { font-size: 125%; }
+html[data-size="150"] { font-size: 150%; }
+html[data-size="200"] { font-size: 200%; }
+
+html[data-width="55"] { --reading-width: 55ch; }
+html[data-width="68"] { --reading-width: 68ch; }
+html[data-width="80"] { --reading-width: 80ch; }
+
+html[data-spacing="relaxed"] {
+  --line-height: 1.6;
+  --paragraph-gap: 2.4em;
+  --letter-spacing: 0.12em;
+  --word-spacing: 0.16em;
+}
+
+html[data-theme="light"] {
+  --page-bg: #EDF5F0;
+  --surface: #FFFFFF;
+  --surface-alt: #E0ECE4;
+  --surface-deep: #F3F8F5;
+  --text: #173126;
+  --text-secondary: #473F84;
+  --link: #473F84;
+  --accent: #5C559E;
+  --border: #5C559E;
+  --danger: #A01B24;
+  --danger-bg: #FCE9EA;
+  --warning: #664B00;
+  --warning-bg: #FFF5CE;
+  color-scheme: light;
+}
+
+html[data-theme="high-contrast"] {
+  --page-bg: #000000;
+  --surface: #000000;
+  --surface-alt: #111111;
+  --surface-deep: #000000;
+  --text: #FFFFFF;
+  --text-secondary: #FFFFFF;
+  --link: #FFFF00;
+  --accent: #00FFFF;
+  --border: #FFFFFF;
+  --danger: #FFB3B3;
+  --danger-bg: #000000;
+  --warning: #FFFF00;
+  --warning-bg: #000000;
+  color-scheme: dark;
+}
+
+html[data-theme="monochrome"] {
+  --page-bg: #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-alt: #FFFFFF;
+  --surface-deep: #FFFFFF;
+  --text: #000000;
+  --text-secondary: #000000;
+  --link: #000000;
+  --accent: #000000;
+  --border: #000000;
+  --danger: #000000;
+  --danger-bg: #FFFFFF;
+  --warning: #000000;
+  --warning-bg: #FFFFFF;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]),
+  html[data-theme="reactive"] {
+    --page-bg: #EDF5F0;
+    --surface: #FFFFFF;
+    --surface-alt: #E0ECE4;
+    --surface-deep: #F3F8F5;
+    --text: #173126;
+    --text-secondary: #473F84;
+    --link: #473F84;
+    --accent: #5C559E;
+    --border: #5C559E;
+    --danger: #A01B24;
+    --danger-bg: #FCE9EA;
+    --warning: #664B00;
+    --warning-bg: #FFF5CE;
+    color-scheme: light;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]),
+  html[data-theme="reactive"] {
+    --page-bg: #1C3A2E;
+    --surface: #0F1F18;
+    --surface-alt: #142820;
+    --surface-deep: #0A1810;
+    --text: #EBF5EE;
+    --text-secondary: #D8D4FF;
+    --link: #D8D4FF;
+    --accent: #A39CE8;
+    --border: #A39CE8;
+    --danger: #FF7D7D;
+    --danger-bg: #2B0E12;
+    --warning: #FFE08A;
+    --warning-bg: #2A2108;
+    color-scheme: dark;
+  }
+}
+
+html[data-font="atkinson"] { --font-selected: "Atkinson Hyperlegible Next", Verdana, Arial, sans-serif; }
+html[data-font="anois"] { --font-selected: "Anois Lúil", "Atkinson Hyperlegible Next", sans-serif; }
+html[data-font="lexend"] { --font-selected: "Lexend", "Atkinson Hyperlegible Next", sans-serif; }
+html[data-font="opendyslexic"] { --font-selected: "OpenDyslexic", "Atkinson Hyperlegible Next", sans-serif; }
+html[data-font="opensans"] { --font-selected: "Open Sans", Arial, sans-serif; }
+html[data-font="sourceserif"] { --font-selected: "Source Serif 4", Georgia, serif; }
+html[data-font="system"] { --font-selected: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--page-bg);
+  overflow-wrap: break-word;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+td,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-selected);
+  font-size: 1rem;
+  letter-spacing: var(--letter-spacing);
+  word-spacing: var(--word-spacing);
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--text);
+  line-height: var(--line-height);
+  margin: 0;
+  min-width: 0;
+  padding: 0.5rem 0;
+  text-align: left;
+}
+
+font {
+  color: inherit;
+  font-family: inherit;
+}
+
+font[size="1"] { font-size: 0.875rem !important; }
+font[size="2"] { font-size: 1rem !important; }
+font[size="3"] { font-size: 1.35rem !important; }
+
+html:not([data-font]),
+html[data-font="default"] {
+  --font-selected: var(--font-body);
+}
+
+html:not([data-font]) [lang="ga"],
+html:not([data-font]) .irish-name,
+html[data-font="default"] [lang="ga"],
+html[data-font="default"] .irish-name {
+  font-family: var(--font-irish);
+}
+
+html:not([data-font]) [lang="en"],
+html[data-font="default"] [lang="en"] {
+  font-family: var(--font-body);
+}
+
+html:not([data-font])[lang="ga"] body,
+html:not([data-font])[lang="ga"] td,
+html:not([data-font])[lang="ga"] button,
+html:not([data-font])[lang="ga"] input,
+html:not([data-font])[lang="ga"] select,
+html:not([data-font])[lang="ga"] textarea,
+html[data-font="default"][lang="ga"] body,
+html[data-font="default"][lang="ga"] td,
+html[data-font="default"][lang="ga"] button,
+html[data-font="default"][lang="ga"] input,
+html[data-font="default"][lang="ga"] select,
+html[data-font="default"][lang="ga"] textarea {
+  font-family: var(--font-irish);
+}
+
+a:link,
+a:visited {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.15em;
+}
+
+a:hover,
+a:active {
+  color: var(--text);
+}
+
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+table[role="presentation"][width="760"] {
+  border-spacing: 0.25rem;
+  margin-inline: auto;
+  max-width: 72rem;
+  table-layout: fixed;
+  width: calc(100% - 1rem) !important;
+}
+
+table[role="presentation"][width="145"],
+td[width="145"] {
+  max-width: 14rem;
+  width: 14rem !important;
+}
+
+table[bgcolor="#142820"],
+td[bgcolor="#142820"] {
+  background-color: var(--surface-alt) !important;
+}
+
+table[bgcolor="#0F1F18"],
+td[bgcolor="#0F1F18"] {
+  background-color: var(--surface) !important;
+}
+
+td[bgcolor="#2A4438"] {
+  background-color: var(--border) !important;
+}
+
+td[bgcolor="#7A72BD"] {
+  background-color: var(--accent) !important;
+}
+
+.top-banner,
+.sectionhead {
+  background: var(--surface-alt);
+  color: var(--text-secondary);
+}
+
+.top-banner {
+  border-color: var(--border);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 0.45rem 0.75rem;
+}
+
+.site-title {
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  line-height: 1.2;
+}
+
+.navbox,
+.contentbox,
+.notice,
+.goodday,
+.law,
+.shoutout,
+.howto {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.navbox {
+  padding: 0.65rem;
+}
+
+.navbox a {
+  color: var(--link);
+  min-height: 2.75rem;
+  padding: 0.6rem 0.2rem;
+}
+
+.navbox a:hover,
+.navbox a:active {
+  color: var(--text);
+}
+
+.sectionhead {
+  border-color: var(--border);
+  font-size: 1rem;
+  padding: 0.45rem 0.75rem;
+}
+
+.contentbox {
+  min-width: 0;
+}
+
+.contentinner {
+  font-size: 1rem;
+  line-height: var(--line-height);
+  margin-inline: auto;
+  max-width: var(--reading-width);
+  padding: clamp(1rem, 3vw, 1.75rem);
+  text-align: left;
+}
+
+/* Legacy article wrappers must not shrink long-form reading text. */
+.article-body,
+.article-license {
+  font-size: 1rem;
+  line-height: var(--line-height);
+}
+
+.contentinner p {
+  margin: 0 0 var(--paragraph-gap);
+}
+
+.home-bio {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.bio-language {
+  min-width: 0;
+}
+
+.bio-language + .bio-language {
+  border-top: 2px solid var(--border);
+  padding-top: 1.75rem;
+}
+
+.bio-language-title {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  margin: 0 0 1rem;
+  padding-bottom: 0.4rem;
+}
+
+.home-bio .bilingual-en {
+  font-style: normal;
+}
+
+.bio-language > :last-child {
+  margin-bottom: 0;
+}
+
+.contentinner > :last-child,
+.contentinner font:last-child > :last-child {
+  margin-bottom: 0;
+}
+
+h2 {
+  border-color: var(--border);
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin: 1.75em 0 0.75em;
+}
+
+h3 {
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  line-height: 1.35;
+  margin: 1.75em 0 0.75em;
+}
+
+b,
+strong {
+  color: inherit;
+}
+
+li {
+  line-height: var(--line-height);
+  margin-bottom: 0.75em;
+}
+
+blockquote {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text-secondary);
+  line-height: var(--line-height);
+  margin: 1.5em 0;
+  padding: 0.8em 1em;
+}
+
+em,
+i,
+.postdate,
+.tag,
+.year-divider,
+.photo-caption,
+.photo-caption-ga,
+.photo-caption-en,
+.license,
+.article-license,
+.bilingual-en,
+.legal-en,
+.legal-meta {
+  color: var(--text-secondary);
+}
+
+.postdate,
+.tag,
+.year-divider,
+.license,
+.footer-text {
+  font-size: 0.875rem;
+}
+
+.tag,
+.year-divider,
+.license,
+.photo-frame,
+.legal-meta,
+.highlight {
+  background: var(--surface-deep);
+  border-color: var(--border);
+}
+
+.photo-caption,
+.photo-caption-ga,
+.photo-caption-en {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.law {
+  border-width: 2px;
+  font-size: 1rem;
+  line-height: var(--line-height);
+  margin: 1.25em 0 var(--paragraph-gap);
+  padding: 1em;
+}
+
+.cta {
+  background: var(--surface-deep);
+  border-color: var(--border);
+  color: var(--text);
+  line-height: var(--line-height);
+  margin: 1.5em 0;
+  padding: 1.25em;
+}
+
+/* Migrated callout copy is body content, even where old markup says size=1. */
+.cta font[size="1"],
+.shoutout > font[size="1"] {
+  font-size: 1rem !important;
+}
+
+.angry {
+  color: var(--danger);
+}
+
+.callout-red,
+.hardday {
+  background: var(--danger-bg);
+  border-color: var(--danger);
+  color: var(--text);
+}
+
+.callout-red strong,
+.hardday strong {
+  color: var(--danger);
+}
+
+.callout-yellow {
+  background: var(--warning-bg);
+  border-color: var(--warning);
+  color: var(--text);
+}
+
+.callout-yellow strong {
+  color: var(--warning);
+}
+
+.split-badge {
+  border-color: var(--border);
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  overflow: visible;
+  white-space: normal;
+}
+
+.split-badge a:link,
+.split-badge a:visited {
+  min-height: 2.75rem;
+  padding: 0.65rem 0.8rem;
+}
+
+.split-badge .split-badge-left:link,
+.split-badge .split-badge-left:visited {
+  background: var(--surface-deep);
+  color: var(--link);
+}
+
+.split-badge .split-badge-right:link,
+.split-badge .split-badge-right:visited {
+  background: var(--link);
+  color: var(--surface-deep);
+}
+
+.split-badge .split-badge-left:hover,
+.split-badge .split-badge-left:active,
+.split-badge .split-badge-left:focus,
+.split-badge .split-badge-right:hover,
+.split-badge .split-badge-right:active,
+.split-badge .split-badge-right:focus {
+  background: var(--text);
+  color: var(--surface-deep);
+}
+
+.footer-text {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.footer-text a:link,
+.footer-text a:visited {
+  color: var(--link);
+}
+
+.site-settings,
+.settings-noscript {
+  background: var(--surface-alt);
+  border: 2px solid var(--border);
+  color: var(--text);
+  margin: 0 0 0.75rem;
+  overflow: visible;
+  padding: 0.35rem;
+}
+
+.site-settings summary {
+  color: var(--link);
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1.4;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.35rem;
+}
+
+.site-settings fieldset {
+  border: 0;
+  margin: 0;
+  min-width: 0;
+  padding: 0.5rem 0.35rem 0.35rem;
+}
+
+.site-settings legend {
+  color: var(--text-secondary);
+  font-weight: 700;
+  padding: 0;
+}
+
+.site-settings label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+}
+
+.site-settings select,
+.site-settings button {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 0.2rem;
+  color: var(--text);
+  line-height: 1.35;
+  margin-top: 0.25rem;
+  min-height: 2.75rem;
+  padding: 0.45rem;
+  width: 100%;
+}
+
+.site-settings button {
+  color: var(--link);
+  cursor: pointer;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.settings-note,
+.settings-noscript,
+.settings-status {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.settings-note {
+  color: var(--text-secondary);
+  margin: 0.8rem 0 0;
+}
+
+.settings-status {
+  min-height: 1.5em;
+  margin: 0.35rem 0 0;
+}
+
+pre,
+code,
+samp,
+kbd {
+  font-family: "Atkinson Hyperlegible Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 50rem) {
+  body {
+    padding-top: 0;
+  }
+
+  table[role="presentation"][width="760"] {
+    border-spacing: 0;
+    width: 100% !important;
+  }
+
+  table[role="presentation"][width="760"] > tbody > tr > td,
+  table[role="presentation"][width="760"] table[width="100%"] > tbody > tr > td {
+    display: block;
+    max-width: none;
+    text-align: left;
+    width: auto !important;
+  }
+
+  table[role="presentation"][width="145"],
+  td[width="145"] {
+    display: block;
+    max-width: none;
+    width: 100% !important;
+  }
+
+  .contentinner {
+    max-width: min(100%, var(--reading-width));
+  }
+
+  .site-settings,
+  .settings-noscript {
+    margin: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
