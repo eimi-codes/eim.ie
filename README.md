@@ -48,6 +48,8 @@ public/
   *.htm
   style.css
   _headers
+research/
+  irish-language-in-europe.md
 src/
   includes/
   pages/

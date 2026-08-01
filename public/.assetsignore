@@ -1,3 +1,8 @@
 .DS_Store
 **/.DS_Store
 ._*
+
+# Source reference PDFs larger than Cloudflare Workers' 25 MiB asset limit.
+# Keep them in the repository, but do not include them in Worker deployments.
+documents/european-union/ga/qc0523179gan-seo-linn-ag-dathu-na-heorpa.pdf
+documents/european-union/en/qc0523179enn-i-colour-in-europe.pdf

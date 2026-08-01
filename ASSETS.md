@@ -6,9 +6,14 @@ stylesheets are source assets and must not be removed by a clean build.
 
 ## Working map
 
-- `public/documents/` contains language-sorted reference publications. EU
-  publications use `european-union/{ga,en,de}/`; the Irish Universal
-  Declaration of Human Rights is under `united-nations/ga/`.
+- `public/documents/` contains language-sorted third-party reference
+  publications, not work authored by Éimí. EU publications use
+  `european-union/{ga,en,de}/` and support ongoing research into the practical
+  position of Irish in the EU after the derogation for a long-form article
+  scheduled for 1 January 2027; see
+  [`research/irish-language-in-europe.md`](research/irish-language-in-europe.md).
+  The Irish Universal Declaration of Human Rights is under
+  `united-nations/ga/`.
 - `public/fonts/web/` is the compact set used by most site font choices.
 - `public/fonts/Gentium/` contains the OFL-licensed Gentium web subset and its
   licence/provenance files.
@@ -65,7 +70,8 @@ require prior permission to redistribute its collection.
 
 ## Large-file note
 
-The EU colouring books are larger than 25 MiB each. They are useful reference
-assets, but that exceeds the per-file limit on some static-asset hosts. Check
-the active hosting limit before exposing them as direct production downloads;
-an object store may be a better home if the current platform rejects them.
+The Gaeilge and English EU colouring books are larger than 25 MiB each. They
+remain useful repository reference assets, but Cloudflare Workers cannot serve
+individual static assets of that size. Both files are therefore listed in
+`public/.assetsignore` and are not part of the deployed site. Move optimised
+copies or the originals to object storage before exposing download links.
