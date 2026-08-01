@@ -7,7 +7,7 @@
 **bean ghréasáin · tacadóir inrochtaineachta · díograiseoir PowerPC**<br>
 *web developer · accessibility advocate · PowerPC enthusiast*
 
-[Suíomh / Website](https://eim.ie/) · [Tionscadail / Projects](https://github.com/eimi-codes?tab=repositories) · [Scríbhneoireacht / Writing](https://eim.ie/posts.htm)
+[Suíomh / Website](https://eim.ie/) · [Tionscadail / Projects](https://eim.ie/projects.htm) · [Scríbhneoireacht / Writing](https://eim.ie/posts.htm)
 
 <br clear="right">
 
@@ -41,7 +41,7 @@ Port dúchasach de [VGAPride](https://github.com/foone/VGAPride) do Mac OS 8.6�
 *A native classic Mac OS port of VGAPride, using Color QuickDraw on real PowerPC hardware and in SheepShaver.*<br>
 [Íoslódáil / Download](https://github.com/eimi-codes/QuickDrawPride/releases/latest) · [An scéal / How it was made](https://eim.ie/posts/2026/vga-to-quickdraw.htm)
 
-### [PuppyClicker as Gaeilge](https://puppyclicker.app/)
+### [PuppyClicker as Gaeilge](https://eim.ie/projects.htm#puppyclicker)
 
 Logánú iomlán Gaeilge de 2,287 teaghrán, le seiceálacha ar struchtúr, athróga, líofacht agus téarmaíocht aiteach.<br>
 *A complete 2,287-string Gaeilge localisation, with dedicated checks for structure, variables, fluency, and queer terminology.*
@@ -71,6 +71,9 @@ Mo shuíomh pearsanta Gaeilge-first: HTML lámhscríofa, gan chreatlach, gan spl
 ## Teagmháil / Find me elsewhere
 
 [Bluesky](https://bsky.app/profile/eim.ie) · [Mastodon](https://mastodon.ie/@eimi) · [Tumblr](https://eimiandcoffee.tumblr.com/) · [Vicipéid](https://ga.wikipedia.org/wiki/User:%C3%89im%C3%ADvici) · [Wikipedia](https://en.wikipedia.org/wiki/User:%C3%89im%C3%ADvici)
+
+Maidir le comhoibriú ar thionscadal, oscail Issue nó Discussion sa stór cuí.<br>
+*For project collaboration, please open an Issue or Discussion in the relevant repository.*
 
 Nuair nach bhfuilim ag obair ar theicneolaíocht nua-aimseartha, bím ag plé le mo bhailiúchán de ríomhairí Apple G3 agus G4, ag imirt cluichí comhoibríocha, nó ag imirt cluichí boird.<br>
 *When I’m not working on modern technology, I’m usually tinkering with G3 and G4 Macs, playing co-op games, or staying at the board-game table for one more round.*
