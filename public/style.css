@@ -648,7 +648,7 @@ blockquote {
 
 @font-face {
   font-family: "Anois Lúil";
-  src: url("/fonts/Anois%20Lu%CC%81il/Anois-Regular.ttf") format("truetype");
+  src: url("/fonts/web/AnoisLuil-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -656,7 +656,7 @@ blockquote {
 
 @font-face {
   font-family: "Anois Lúil";
-  src: url("/fonts/Anois%20Lu%CC%81il/Anois-RegularItalic.ttf") format("truetype");
+  src: url("/fonts/web/AnoisLuil-RegularItalic.ttf") format("truetype");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -664,7 +664,7 @@ blockquote {
 
 @font-face {
   font-family: "Anois Lúil";
-  src: url("/fonts/Anois%20Lu%CC%81il/Anois-Bold.ttf") format("truetype");
+  src: url("/fonts/web/AnoisLuil-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -672,7 +672,7 @@ blockquote {
 
 @font-face {
   font-family: "Anois Lúil";
-  src: url("/fonts/Anois%20Lu%CC%81il/Anois-BoldItalic.ttf") format("truetype");
+  src: url("/fonts/web/AnoisLuil-BoldItalic.ttf") format("truetype");
   font-style: italic;
   font-weight: 700;
   font-display: swap;
