@@ -161,6 +161,113 @@ img {
   font-size: 10px;
 }
 
+.projects-intro {
+  max-width: 62em;
+}
+
+.project-card {
+  background-color: #0A1810;
+  border: 1px solid #2A4438;
+  border-left: 3px solid #7A72BD;
+  margin: 12px 0;
+  padding: 0;
+}
+
+.project-card:target {
+  outline: 2px solid #CAC6F9;
+  outline-offset: 2px;
+}
+
+.project-header {
+  background-color: #142820;
+  border-bottom: 1px dotted #2A4438;
+  padding: 8px 10px;
+}
+
+.project-number {
+  color: #7A72BD;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+}
+
+.project-title {
+  color: #EBF5EE;
+  font-size: 16px;
+  line-height: 1.25;
+  margin: 2px 0 3px 0;
+}
+
+.project-kind {
+  color: #CAC6F9;
+  font-size: 10px;
+}
+
+.project-body {
+  padding: 10px;
+}
+
+.project-image {
+  background-color: #0F1F18;
+  border: 1px solid #7A72BD;
+  margin: 0 0 10px 0;
+  padding: 5px;
+  text-align: center;
+}
+
+.project-image img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.project-facts {
+  border-top: 1px dotted #2A4438;
+  color: #CAC6F9;
+  font-size: 10px;
+  margin: 10px 0 0 0;
+  padding: 8px 0 0 0;
+}
+
+.project-facts b {
+  color: #CAC6F9;
+}
+
+.project-links {
+  margin: 10px 0 0 0;
+}
+
+.project-link:link,
+.project-link:visited {
+  background-color: #142820;
+  border: 1px solid #7A72BD;
+  color: #CAC6F9;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  margin: 0 5px 5px 0;
+  padding: 5px 8px;
+  text-decoration: none;
+}
+
+.project-link:hover,
+.project-link:active,
+.project-link:focus {
+  background-color: #CAC6F9;
+  color: #0A1810;
+  text-decoration: underline;
+}
+
+.projects-more {
+  background-color: #142820;
+  border: 1px dotted #7A72BD;
+  margin-top: 14px;
+  padding: 10px;
+  text-align: center;
+}
+
 .tag {
   background-color: #0F1F18;
   border: 1px solid #7A72BD;
@@ -500,6 +607,10 @@ blockquote {
   .top-banner,
   .footer-text,
   .postdate,
+  .project-number,
+  .project-kind,
+  .project-facts,
+  .project-link,
   .tag,
   .year-divider,
   .photo-caption,
@@ -553,6 +664,10 @@ blockquote {
 
   .article-license {
     font-size: 12px;
+  }
+
+  .project-title {
+    font-size: 20px;
   }
 }
 
