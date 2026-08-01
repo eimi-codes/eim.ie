@@ -952,6 +952,38 @@ blockquote {
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Gentium";
+  src: url("/fonts/Gentium/web/Gentium-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gentium";
+  src: url("/fonts/Gentium/web/Gentium-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gentium";
+  src: url("/fonts/Gentium/web/Gentium-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gentium";
+  src: url("/fonts/Gentium/web/Gentium-BoldItalic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
 :root {
   --font-body: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", Verdana, Arial, sans-serif;
   --font-irish: "Anois Lúil", "Atkinson Hyperlegible Next", Verdana, Arial, sans-serif;
@@ -1086,6 +1118,7 @@ html[data-theme="monochrome"] {
 
 html[data-font="atkinson"] { --font-selected: "Atkinson Hyperlegible Next", Verdana, Arial, sans-serif; }
 html[data-font="anois"] { --font-selected: "Anois Lúil", "Atkinson Hyperlegible Next", sans-serif; }
+html[data-font="gentium"] { --font-selected: "Gentium", Georgia, serif; }
 html[data-font="lexend"] { --font-selected: "Lexend", "Atkinson Hyperlegible Next", sans-serif; }
 html[data-font="opendyslexic"] { --font-selected: "OpenDyslexic", "Atkinson Hyperlegible Next", sans-serif; }
 html[data-font="opensans"] { --font-selected: "Open Sans", Arial, sans-serif; }
@@ -1301,6 +1334,53 @@ td[bgcolor="#7A72BD"] {
 .home-bio {
   display: grid;
   gap: 1.75rem;
+}
+
+.profile-portraits {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 auto 1.5rem;
+  max-width: 320px;
+}
+
+.profile-portrait {
+  background: var(--surface-deep);
+  border: 1px solid var(--border);
+  min-width: 0;
+  padding: 0.35rem;
+}
+
+.profile-portrait img {
+  aspect-ratio: 1;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.profile-portrait span {
+  display: block;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  padding: 0.25rem 0.25rem 0;
+  text-align: center;
+}
+
+.profile-portrait span[lang="en"] {
+  color: var(--text-secondary);
+}
+
+.profile-portraits figcaption {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  grid-column: 1 / -1;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.profile-portraits figcaption span {
+  display: block;
 }
 
 .bio-language {

@@ -15,7 +15,7 @@
     "contrast-light": "monochrome",
   };
   const allowed = {
-    font: new Set(["default", "atkinson", "anois", "lexend", "opendyslexic", "opensans", "sourceserif", "system"]),
+    font: new Set(["default", "atkinson", "anois", "gentium", "lexend", "opendyslexic", "opensans", "sourceserif", "system"]),
     size: new Set(["100", "125", "150", "200"]),
     theme: new Set(["light", "dark", "reactive", "high-contrast", "monochrome"]),
     width: new Set(["55", "68", "80"]),

@@ -31,8 +31,20 @@ A Gaeilge-first personal site for **Éimí Mhic an Ridire**: calm, accessible, r
 
 ```text
 public/
+  documents/
+    european-union/{ga,en,de}/
+    united-nations/ga/
+  fonts/
+    web/                    # small, site-served font subset
+    Gaeilge/                # Gaelchló reference collection
+    Gentium/                # OFL-licensed serif + webfonts
   img/
+    profile/                # commissioned profile portraits
+    dvs/                    # DVS identity and event artwork
+    iBook/ + iMac/          # gallery photography
+    projects/               # project-card imagery
   posts/
+  sig/                      # signature artwork and animation
   *.htm
   style.css
   _headers
@@ -44,11 +56,14 @@ tools/
 package.json
 wrangler.jsonc
 LICENSE.md
+ASSETS.md
 style.md
 ```
 
 Edit pages in `src/pages/` and shared site chrome in `src/includes/`.
-The generated site still lives in `public/`.
+The generated site still lives in `public/`. See [`ASSETS.md`](ASSETS.md) for
+the deployable asset inventory, path conventions, provenance, and licensing
+notes.
 
 ## 🛠️ Tógáil / Build
 

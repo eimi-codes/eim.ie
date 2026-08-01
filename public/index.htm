@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Leathanach baile &Eacute;im&iacute; Mhic an Ridire — web developer, accessibility advocate, PowerPC enthusiast">
 <meta name="keywords" content="Eimi, Éimí, Irish, Gaeilge, web design, accessibility, PowerPC, Apple, Aberdeen, Scotland">
-<link rel="stylesheet" href="/style.css?v=629f88826e3e" type="text/css">
+<link rel="stylesheet" href="/style.css?v=7f18abbce6b7" type="text/css">
 <link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
@@ -33,16 +33,16 @@
 <meta property="profile:first_name" content="&Eacute;im&iacute;">
 <meta property="profile:last_name" content="Mhic an Ridire">
 <meta property="og:url" content="https://eim.ie/">
-<meta property="og:image" content="https://eim.ie/img/EmaR_26_square.png">
+<meta property="og:image" content="https://eim.ie/img/branding/eimi-monogram.png">
 <meta property="og:image:width" content="500">
 <meta property="og:image:height" content="500">
-<meta property="og:image:alt" content="Portrait image for &Eacute;im&iacute; Mhic an Ridire">
+<meta property="og:image:alt" content="&Eacute;im&iacute; monogram framed by Celtic knotwork">
 <meta property="og:locale" content="ga_IE">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&Eacute;im&iacute; Mhic an Ridire :: Leathanach Baile | Home">
 <meta name="twitter:description" content="Leathanach baile &Eacute;im&iacute; Mhic an Ridire - web developer, accessibility advocate, PowerPC enthusiast">
-<meta name="twitter:image" content="https://eim.ie/img/EmaR_26_square.png">
-<meta name="twitter:image:alt" content="Portrait image for &Eacute;im&iacute; Mhic an Ridire">
+<meta name="twitter:image" content="https://eim.ie/img/branding/eimi-monogram.png">
+<meta name="twitter:image:alt" content="&Eacute;im&iacute; monogram framed by Celtic knotwork">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -57,7 +57,10 @@
         "eimi-codes"
       ],
       "url": "https://eim.ie/",
-      "image": "https://eim.ie/img/EmaR_26_square.png",
+      "image": [
+        "https://eim.ie/img/profile/eimi-avatar-irish-tricolour.jpg",
+        "https://eim.ie/img/profile/eimi-avatar-bisexual-pride.jpg"
+      ],
       "description": "Irish web developer, accessibility advocate, Gaeilgeoir, and PowerPC enthusiast living in North East Scotland.",
       "jobTitle": "Web developer",
       "homeLocation": {
@@ -116,7 +119,7 @@
   ]
 }
 </script>
-<script src="/site-settings.js?v=e4460342b801"></script>
+<script src="/site-settings.js?v=ec8d0542787b"></script>
 </head>
 <body bgcolor="#1C3A2E" text="#EBF5EE" link="#CAC6F9" vlink="#CAC6F9" alink="#EBF5EE">
 <a href="#main-content" class="skip-link"><span lang="ga">L&eacute;im go pr&iacute;omh-&aacute;bhar</span> | <span lang="en">Skip to main content</span></a>
@@ -160,6 +163,7 @@
             <option value="default" lang="en">Site default</option>
             <option value="atkinson" lang="en">Atkinson Hyperlegible Next</option>
             <option value="anois" lang="ga">Anois L&uacute;il</option>
+            <option value="gentium" lang="en">Gentium (serif)</option>
             <option value="lexend" lang="en">Lexend</option>
             <option value="opendyslexic" lang="en">OpenDyslexic</option>
             <option value="opensans" lang="en">Open Sans</option>
@@ -246,6 +250,23 @@
     <tr><td class="contentbox" id="main-content" role="main">
       <div class="sectionhead">:: <span lang="ga">Dia daoibh!</span> | <span lang="en">Hello!</span> ::</div>
       <div class="contentinner">
+        <figure class="profile-portraits" aria-labelledby="profile-portraits-caption">
+          <div class="profile-portrait">
+            <img src="/img/profile/eimi-avatar-irish-tricolour.jpg" alt="L&eacute;ar&aacute;id choimisi&uacute;naithe d&rsquo;&Eacute;im&iacute;, &uacute;s&aacute;ideoir cathaoireach rotha&iacute; le cluasa sionnaigh, os comhair thr&iacute;dhathach na h&Eacute;ireann" width="2048" height="2048" decoding="async">
+            <span lang="ga">Bratach na h&Eacute;ireann</span>
+            <span lang="en">Irish tricolour</span>
+          </div>
+          <div class="profile-portrait">
+            <img src="/img/profile/eimi-avatar-bisexual-pride.jpg" alt="Commissioned illustration of &Eacute;im&iacute;, a fox-eared wheelchair user, against the bisexual pride flag" width="2048" height="2048" loading="lazy" decoding="async">
+            <span lang="ga">Bratach an bhr&oacute;id dh&eacute;ghn&eacute;asaigh</span>
+            <span lang="en">Bisexual pride</span>
+          </div>
+          <figcaption id="profile-portraits-caption">
+            <span lang="ga">Mise, i mo shu&iacute; go br&oacute;d&uacute;il.</span>
+            <span lang="en">Me, proudly taking up space.</span>
+          </figcaption>
+        </figure>
+
         <div class="home-bio">
           <section class="bio-language" lang="ga" aria-labelledby="bio-ga-title">
             <h2 class="bio-language-title" id="bio-ga-title">Gaeilge</h2>
