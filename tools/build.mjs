@@ -28,6 +28,14 @@ async function main() {
     await fs.writeFile(outputPath, rendered, "utf8");
     console.log(`built ${path.relative(rootDir, outputPath)}`);
   }
+
+  // Keep the historical underscore URL working while the hyphenated filename
+  // remains the canonical, user-facing email-signature page.
+  await fs.copyFile(
+    path.join(outputDir, "email-signature.html"),
+    path.join(outputDir, "email_signature.html"),
+  );
+  console.log("built public/email_signature.html (compatibility alias)");
 }
 
 async function fileVersion(filePath) {
