@@ -17,28 +17,29 @@
 
 <p lang="en"><em>I’m an Irish woman living in the North East of Scotland. I create genuinely accessible digital experiences, grounded in my own perspective as a neurodivergent wheelchair user with hypermobile Ehlers–Danlos Syndrome and Functional Neurological Disorder. I previously studied Computing &amp; IT at the Open University and now study Irish Studies at the University of Galway. I’m still learning Gaeilge.</em></p>
 
-> **Droichid, ní ballaí. · Bridges, not walls.**
+### Droichid, ní ballaí. · Bridges, not walls.
 
-Is mór agam HTML ciallmhar, teanga chruinn, staid fhócais shoiléir, bogearraí a mhaireann, agus doiciméadacht nach gcuireann bac ar dhaoine.<br>
+Is mór agam HTML ciallmhar, teanga chruinn, staid fhócais shoiléir, bogearraí a mhaireann, agus doiciméadacht nach gcuireann bac ar dhaoine.
+
 *I care about sensible HTML, accurate language, clear focus states, software with a long life, and documentation that does not make people fight it.*
 
 ## Mo chuid oibre / What I work on
 
-- **Inrochtaineacht / Accessibility** — dearadh agus forbairt atá dírithe ar dhaoine, le WCAG 2.2 agus EN 301 549 mar bhunlínte.<br>
+- **Inrochtaineacht / Accessibility**; dearadh agus forbairt atá dírithe ar dhaoine, le WCAG 2.2 agus EN 301 549 mar bhunlínte.<br>
   *People-centred design and development, using WCAG 2.2 and EN 301 549 as baselines.*
-- **Gaeilge agus logánú / Gaeilge and localisation** — uirlisí agus ábhar digiteach níos fearr don Ghaeilge, le meas ar an gcomhthéacs agus ar an téarmaíocht aiteach.<br>
+- **Gaeilge agus logánú / Gaeilge and localisation**; uirlisí agus ábhar digiteach níos fearr don Ghaeilge, le meas ar an gcomhthéacs agus ar an téarmaíocht aiteach.<br>
   *Better digital tools and content for Gaeilge, with care for context and queer terminology.*
-- **An gréasán oscailte / The open web** — suíomhanna ciúine, soléite agus freagrúla a oibríonn ar ghnáthbhrabhsálaithe agus ar naisc mhalla.<br>
+- **An gréasán oscailte / The open web**; suíomhanna ciúine, soléite agus freagrúla a oibríonn ar ghnáthbhrabhsálaithe agus ar naisc mhalla.<br>
   *Calm, readable, responsive sites that work in ordinary browsers and on slow connections.*
-- **Ríomhaireacht retro / Retrocomputing** — PowerPC, Mac OS clasaiceach, caomhnú digiteach, agus an méid is féidir linn a fhoghlaim ó sheanríomhairí.<br>
+- **Ríomhaireacht retro / Retrocomputing**; PowerPC, Mac OS clasaiceach, caomhnú digiteach, agus an méid is féidir linn a fhoghlaim ó sheanríomhairí.<br>
   *PowerPC, classic Mac OS, digital preservation, and what old computers can still teach us.*
 
 ## Tionscadail roghnaithe / Selected projects
 
 ### [QuickDrawPride](https://github.com/eimi-codes/QuickDrawPride)
 
-Port dúchasach de [VGAPride](https://github.com/foone/VGAPride) do Mac OS 8.6–9.2.2, ag úsáid Color QuickDraw ar fhíor-ríomhairí PowerPC agus in SheepShaver.<br>
-*A native classic Mac OS port of VGAPride, using Color QuickDraw on real PowerPC hardware and in SheepShaver.*<br>
+Port dúchasach de [VGAPride](https://github.com/foone/VGAPride) do Mac OS 8.6–9.2.2, ag úsáid Color QuickDraw ar fhíor-ríomhairí PowerPC.<br>
+*A native classic Mac OS port of VGAPride, using Color QuickDraw on real PowerPC hardware.*<br>
 [Íoslódáil / Download](https://github.com/eimi-codes/QuickDrawPride/releases/latest) · [An scéal / How it was made](https://eim.ie/posts/2026/vga-to-quickdraw.htm)
 
 ### [PuppyClicker as Gaeilge](https://eim.ie/projects.htm#puppyclicker)
@@ -64,8 +65,8 @@ Dréacht-aistriúchán neamhoifigiúil Gaeilge de Cheadúnas Poiblí an Aontais 
 
 ### [eim.ie](https://eim.ie/)
 
-Mo shuíomh pearsanta Gaeilge-first: HTML lámhscríofa, gan chreatlach, gan spleáchais, agus cairdiúil do PowerPC.<br>
-*My Gaeilge-first personal site: hand-written HTML, no framework, no dependencies, and PowerPC-friendly.*<br>
+Mo shuíomh pearsanta: HTML lámhscríofa, gan chreatlach, gan spleáchais, agus cairdiúil do PowerPC.<br>
+*My personal site: hand-written HTML, no framework, no dependencies, and PowerPC-friendly.*<br>
 [Cód foinseach / Source](https://github.com/eimi-codes/eim.ie)
 
 ## Teagmháil / Find me elsewhere
