@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 4 4">
-  <mask id="m">
-    <rect width="4" height="4" fill="#fff" rx="0.925" />
-  </mask>
-  <g mask="url(#m)" transform="scale(0.97)" transform-origin="center">
-    <rect width="4" height="4" fill="#2d2d2d" />
-    <rect width="4" height="3" fill="#9858cc" />
-    <rect width="4" height="2" fill="#ffffff" />
-    <rect width="4" height="1" fill="#f4ea29" />
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 4 4"><mask id="m"><rect width="4" height="4" fill="#fff" rx=".925"/></mask><g mask="url(#m)" transform="scale(0.97)" transform-origin="center"><rect width="4" height="4" fill="#2d2d2d"/><rect width="4" height="3" fill="#9858cc"/><rect width="4" height="2" fill="#fff"/><rect width="4" height="1" fill="#f4ea29"/></g></svg>
