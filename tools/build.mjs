@@ -1,4 +1,5 @@
 import fs from "node:fs/promises";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -11,18 +12,27 @@ const includeCache = new Map();
 
 async function main() {
   const pages = await findPages(sourceDir);
+  const assetVersions = {
+    settings: await fileVersion(path.join(outputDir, "site-settings.js")),
+    style: await fileVersion(path.join(outputDir, "style.css")),
+  };
 
   for (const sourcePath of pages) {
     const relPath = path.relative(sourceDir, sourcePath);
     const outputPath = path.join(outputDir, relPath);
     const source = await fs.readFile(sourcePath, "utf8");
-    const page = parsePage(source, sourcePath);
+    const page = parsePage(source, sourcePath, assetVersions);
     const rendered = await renderLayout(page, outputPath);
 
     await fs.mkdir(path.dirname(outputPath), { recursive: true });
     await fs.writeFile(outputPath, rendered, "utf8");
     console.log(`built ${path.relative(rootDir, outputPath)}`);
   }
+}
+
+async function fileVersion(filePath) {
+  const contents = await fs.readFile(filePath);
+  return createHash("sha256").update(contents).digest("hex").slice(0, 12);
 }
 
 async function findPages(dir) {
@@ -41,7 +51,7 @@ async function findPages(dir) {
   return pages.sort();
 }
 
-function parsePage(source, sourcePath) {
+function parsePage(source, sourcePath, assetVersions) {
   const { attrs, body } = parseFrontMatter(source);
   const head = matchSection(body, /^([\s\S]*?<\/head>)/i, "document head", sourcePath);
   const sidebarExtra = matchSection(
@@ -57,10 +67,15 @@ function parsePage(source, sourcePath) {
     sourcePath,
   );
 
+  const versionedHead = head.trimEnd().replace(
+    /href="\/style\.css(?:\?[^\"]*)?"/gi,
+    `href="/style.css?v=${assetVersions.style}"`,
+  );
+
   return {
-    head: head.trimEnd().replace(
+    head: versionedHead.replace(
       /<\/head>$/i,
-      '<script src="/site-settings.js"></script>\n</head>',
+      `<script src="/site-settings.js?v=${assetVersions.settings}"></script>\n</head>`,
     ),
     content: trimOuterBlankLines(content),
     sidebarExtra,
