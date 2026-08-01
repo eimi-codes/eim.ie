@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 8 8">
-  <mask id="m">
-    <rect width="8" height="8" fill="#fff" rx="1.85" />
-  </mask>
-  <g mask="url(#m)" transform="scale(0.97)" transform-origin="center">
-    <rect width="8" height="8" fill="#c22edc" />
-    <rect width="8" height="7" fill="#0644b3" />
-    <rect width="8" height="6" fill="#119f0b" />
-    <rect width="8" height="5" fill="#ffe500" />
-    <rect width="8" height="4" fill="#fd8c00" />
-    <rect width="8" height="3" fill="#fe0000" />
-    <rect width="8" height="2" fill="#784f17" />
-    <rect width="8" height="1" fill="#000000" />
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 8 8"><mask id="m"><rect width="8" height="8" fill="#fff" rx="1.85"/></mask><g mask="url(#m)" transform="scale(0.97)" transform-origin="center"><rect width="8" height="8" fill="#c22edc"/><rect width="8" height="7" fill="#0644b3"/><rect width="8" height="6" fill="#119f0b"/><rect width="8" height="5" fill="#ffe500"/><rect width="8" height="4" fill="#fd8c00"/><rect width="8" height="3" fill="#fe0000"/><rect width="8" height="2" fill="#784f17"/><rect width="8" height="1" fill="#000"/></g></svg>

@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 9 9">
-  <mask id="m">
-    <rect width="9" height="9" fill="#fff" rx="2.08125" />
-  </mask>
-  <g mask="url(#m)" transform="scale(0.97)" transform-origin="center">
-    <rect width="9" height="9" fill="#000000" />
-    <rect width="9" height="8" fill="#fbacc7" />
-    <rect width="9" height="7" fill="#fe6567" />
-    <rect width="9" height="6" fill="#ffc90d" />
-    <rect width="9" height="5" fill="#ffffff" />
-    <rect width="9" height="4" fill="#b5e51d" />
-    <rect width="9" height="3" fill="#00a3e8" />
-    <rect width="9" height="2" fill="#9ad9ea" />
-    <rect width="9" height="1" fill="#000000" />
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 9 9"><mask id="m"><rect width="9" height="9" fill="#fff" rx="2.081"/></mask><g mask="url(#m)" transform="scale(0.97)" transform-origin="center"><rect width="9" height="9" fill="#000"/><rect width="9" height="8" fill="#fbacc7"/><rect width="9" height="7" fill="#fe6567"/><rect width="9" height="6" fill="#ffc90d"/><rect width="9" height="5" fill="#fff"/><rect width="9" height="4" fill="#b5e51d"/><rect width="9" height="3" fill="#00a3e8"/><rect width="9" height="2" fill="#9ad9ea"/><rect width="9" height="1" fill="#000"/></g></svg>
